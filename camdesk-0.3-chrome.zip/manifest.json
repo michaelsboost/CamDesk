@@ -1,0 +1,19 @@
+{
+   "app": {
+      "background": {
+         "scripts": [ "background.js" ]
+      }
+   },
+   "description": "CamDesk The Desktop Webcam Widget",
+   "icons": {
+      "128": "logo.png",
+      "16": "logo.png",
+      "48": "logo.png"
+   },
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAh+liisrKqOoBsgDhi86GwSIV2/99Lwb/ZOQZNy8wBjanaZhqL0rZCpKY6DpiKp9swvbf8sJHgzG5mc7wssFX9vOiwRddjBW4rKg9P8Z+LsZhRVL4g5SoyAXNCGQjpkMAeSHHhgchtS5UX6iDjjcQgN5LoXLfUBMkMJfEiVvpjBJ7IN8+srmWrhQqz8kb+BIXLywzUiMZRokMIdwGqQe5VLzJT02F6oGo94VA71P1QXP7IN840vXdpgKWqay31c+7D2WcJiazvZSB9aos4IpISyLhL1m4kpi6FWJLIAbtgDVmJ4Gp5YROnCEn/eXp3a/yOsl0tvolZksMa7y0qFJynQIDAQAB",
+   "manifest_version": 2,
+   "name": "CamDesk",
+   "permissions": [ "audioCapture", "videoCapture" ],
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "0.3"
+}

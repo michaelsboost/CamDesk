@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CamDesk</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=9" />
+    <link type="text/css" rel="stylesheet" href="css/style.css"/>
+  </head>
+  <body>
+    <a class="hide" id="takepicture">Take Picture</a>
+    
+    <header class="tips">
+      <div>
+        <nav>
+          [Tab] for Snapshot<br>
+          [Esc] to Close
+        </nav>
+      </div>
+    </header>
+    
+    <div class="view" data-active="false">
+      <button class="install">install</button>
+      <video id="vid" autoplay></video>
+    </div>
+    
+    <canvas class="hide" id="canvas"></canvas>
+    <img class="hide" id="theimage" />
+    <a class="hide" id="savepicture">Save Picture</a>
+    
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/shortcut.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
+  </body>
+</html>
