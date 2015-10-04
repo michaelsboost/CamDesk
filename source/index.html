@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CamDesk</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css"/>
+  </head>
+  <body>
+    <!-- Displays webcam -->
+    <video muted autoplay></video>
+
+    <!-- Instructional Dialog -->
+    <header class="tips" data-action="toggle">
+      <div>
+        <nav>
+          [Space] for Snapshot<br>
+          [Esc] to Close
+          <p data-action="toggle-tips">[Tab] to Toggle Dialog</p>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Change webcam source -->
+    <div class="select centa" data-action="toggle">
+      <select id="videoSource"></select>
+      <!-- <label for="videoSource">Video source: </label> -->
+      
+      <!-- Used to download snapped photo -->
+      <a id="save" data-action="toggle" class="hide">
+        Save Picture
+      </a>
+    </div>
+
+    <!-- Used to download snapped photo -->
+    <canvas class="hide" id="canvas"></canvas>
+    <img class="hide" id="theimage" />
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/shortcut.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>

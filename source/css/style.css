@@ -2,6 +2,7 @@
 
 html, body {
   background: #fff;
+  -webkit-app-region: drag;
 }
 
 html, body, .view, .tips > div {
@@ -11,7 +12,6 @@ html, body, .view, .tips > div {
 
 .view[data-active="false"] > video,
 .view[data-active="true"] > button,
-.install:not(.show-install),
 .hide {
   display: none;
 }
@@ -45,4 +45,16 @@ nav {
   display: table-cell;
   vertical-align: middle;
   z-index: 1;
+}
+.select {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+.select, .select option {
+  -webkit-app-region: no-drag;
+}
+.centa {
+  text-align: center;
 }
