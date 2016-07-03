@@ -1,1 +1,1 @@
-# CamDesk is an abandoned project
+# I am no longer actively developing CamDesk
