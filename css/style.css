@@ -396,3 +396,7 @@ section h3 p {
     display: none;
   }
 }
+
+.hide {
+  display: none;
+}
