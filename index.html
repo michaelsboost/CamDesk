@@ -1,0 +1,172 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CamDesk</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=9" />
+    <link rel="stylesheet"  href="css/style.css" />
+    <link rel="stylesheet" href="css/fotorama.css" />
+    <script src="js/jquery.min.js"></script>
+    <script src="js/fotorama.js"></script>
+    <script src="js/FileSaver.min.js"></script>
+    <script src="js/canvas-toBlob.js"></script>
+<!--
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.3/fotorama.css" />
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.3/fotorama.js"></script>
+-->
+    <meta name="Description" content="CamDesk The Desktop Webcam Widget">
+    <meta name="Keywords" content="camdesk, the, desktop, webcam, widget, free, open, source, cross, platform, windows, linux, mac, os, x, 10, chrome, extension, screencasting, surveillance, system, display, easy, simple">
+    <meta name="application-name" content="CamDesk"> 
+    <meta name="author" content="Michael Schwartz">
+  </head>
+  <body>
+    <div class="head" id="home">
+      <a class="logo">
+        <span class="logotxt appname"></span>
+      </a>
+    
+      <!-- Menubar Icons and Dialogs -->
+      <a class="barsicon fr">
+        <input id="toggle" type="checkbox" class="hide">
+        <label class="pointa" for="toggle">&equiv;</label>
+      </a>
+    
+      <div class="navlinks"></div>
+      
+      <a class="menubtn" href="http://sourceforge.net/projects/camdesk/files/latest/download">Download</a>
+    </div>
+    
+    <div class="wholefill mgtop headimage">
+      <article class="wholefill greeting">
+        <section>
+          <h1>CamDesk</h1>
+          <h3>
+            Desktop Webcam Widget
+    
+            <div>
+              <p>
+                <a class="button" href="http://sourceforge.net/projects/camdesk/files/latest/download" target="_blank">
+                  Download <span class="appname"></span>
+                </a>
+              </p>
+    
+              <p>
+                <a class="fa fa-windows" href="http://sourceforge.net/projects/camdesk/files/1.2/camdesk-1.2.1.zip/download" target="_blank" title="Download for Windows Desktop"></a>
+                <a class="getmacv fa msicon-osx" href="http://sourceforge.net/projects/camdesk/files/camdesk-0.0.1-mac.dmg/download" target="_blank" title="Download for Mac OS X"></a>
+                <a class="getlinv fa fa-linux" href="http://sourceforge.net/projects/camdesk/files/1.1/camdesk-1.1-lin.tar.gz/download" target="_blank" title="Download for Linux"></a>
+                <a class="fa msicon-chrome" href="https://chrome.google.com/webstore/detail/camdesk/jmjgcfadcmkpmkfhecfcoghmaloblkod?utm_source=chrome-ntp-icon" target="_blank" title="Download for Chrome"></a>
+                <a class="fa fa-github" href="https://github.com/mikethedj4/CamDesk" target="_blank" title="Fork on Github"></a>
+              </p>
+            </div>
+          </h3>
+        </section>
+        <section>
+          <!-- Displays webcam -->
+          <select id="videoSource" class="fl"></select>
+          <span class="fr">[Space] for Snapshot</span>
+          <br>
+          <video muted autoplay></video><br>
+          
+
+          <!-- Used to download snapped photo -->
+          <a id="save" data-action="toggle" class="hide">
+            Save Picture
+          </a>
+          <canvas class="hide" id="canvas"></canvas>
+          <img class="hide" id="theimage" />
+        </section>
+      </article>
+    </div>
+    
+    <div class="wfill" id="videos">
+      <h4 class="headtxt">videos:</h4>
+
+      <div class="preview" id="gallery">
+        <div class="fotorama" data-allowfullscreen="true" 
+          data-width="100%"
+          data-height="100%"
+          data-nav="thumbs"
+          data-fit="cover"
+          data-keyboard="true">
+          
+          <a href="https://www.youtube.com/watch?v=PigLQ-_YR1Y">CamDesk for Chrome</a>
+          <a href="https://www.youtube.com/watch?v=N992uK-QgfE">CamDesk for Linux</a>
+          <a href="https://www.youtube.com/watch?v=-hkAYJXzGno">CamDesk for Mac OS X</a>
+        </div>
+      </div>
+
+      <p>
+        &nbsp;
+      </p>
+    </div>
+    
+    <div id="docs" class="docs">
+      <h4 class="headtxt">requirements:</h4>
+      <article>
+        <section>
+          <h1 class="fa fa-windows"></h1>
+        </section>
+        <section class="ta">
+          <h2>Language</h2>
+          Visual Basic
+
+          <h2>Requirements</h2>
+          <a href="http://www.microsoft.com/net/" target="_blank">.NET Framework 4</a><br>
+          1.2MB of free space
+        </section>
+      </article>
+      <article>
+        <section>
+          <h1 class="fa msicon-osx"></h1>
+        </section>
+        <section class="ta">
+          <h2>Language</h2>
+          JavaScript
+
+          <h2>Requirements</h2>
+          93MB of free space
+        </section>
+      </article>
+      <article>
+        <section>
+          <h1 class="fa fa-linux"></h1>
+        </section>
+        <section class="ta">
+          <h2>Language</h2>
+          JavaScript
+
+          <h2>Requirements</h2>
+          40MB of free space
+        </section>
+      </article>
+    </div>
+    
+    <div class="hidez">
+      <div class="foot">
+        <a class="logo fl">
+          <span class="logotxt appname"></span>
+        </a>
+    
+        <div class="footlinks fr">
+          <div data-action="pushpagelinks">
+            <a href="#home" class="notinheader">Home</a>
+            <a href="#videos">Videos</a>
+            <a href="#docs">Documentation</a>
+            <a href="https://www.facebook.com/pages/CamDesk/363216231833?ref=bookmarks" target="_blank">Facebook</a>
+            <a href="https://github.com/mikethedj4/CamDesk" target="_blank">Github</a>
+            <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=BSYGA2RB5ZJCC" target="_blank">Donate</a>
+          </div>
+    
+          <div class="author">
+            Made by <a href="http://mikethedj4.github.io/" target="_blank">Michael</a> with love and caffeine.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/shortcut.js"></script>
+    <script src="js/index.js"></script>
+  </body>
+</html>

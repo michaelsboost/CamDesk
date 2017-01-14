@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8'>
+<meta name='viewport' content='initial-scale=1.0'>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+<style type="text/css">
+@font-face {
+	font-family:ThinTxt;
+	src:url('files/thin-text.ttf');}
+	
+body {
+	cursor:default;
+	border:0px;
+	background:-moz-radial-gradient(circle, #00f0ff, #534dd7);
+	background:-webkit-gradient(radial, center center, 0, center center, 460, from(#00f0ff), to(#534dd7));
+	background:-webkit-radial-gradient(circle, #00f0ff, #534dd7);
+	background-color:#534dd7;}
+	
+div.bgov {
+	position:absolute;
+	top:0px;
+	left:0px;
+	width:100%;
+	height:100%;
+	opacity:0.8;
+	background-color:#000;}
+	
+a.bluebtn {
+	text-decoration:none;
+	color:#fff;
+	font-family:ThinTxt!important;
+	font-size:26px!important;
+	background:#02cde8;
+	background:-moz-linear-gradient(#02cde8, #013068);
+	background:-o-linear-gradient(#02cde8, #013068);
+	background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#02cde8), to(#013068));/* Older webkit syntax */
+	background:-webkit-linear-gradient(#02cde8, #013068);
+	filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#02cde8', endColorstr='#013068',GradientType=0 );
+	box-shadow:inset 0 1px 2px #FFFFFF, 0 0 3px #999999;
+	border:1px solid #02cde8;
+	border-radius:10px;
+	padding:7px 20px 7px 20px;}
+	
+a.bluebtn:hover {
+	background:#0cd7f2;
+	background:-moz-linear-gradient(#0cd7f2, #0b3a72);
+	background:-o-linear-gradient(#0cd7f2, #0b3a72);
+	background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#0cd7f2), to(#0b3a72));/* Older webkit syntax */
+	background:-webkit-linear-gradient(#0cd7f2, #0b3a72);
+	filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#0cd7f2', endColorstr='#0b3a72',GradientType=0 );
+	box-shadow:inset 0 1px 6px #FFFFFF, 0 0 6px #999999;}
+	
+a.bluebtn:active {
+	box-shadow:inset 0 1px 2px #666, 0 0 3px #999999;}
+	
+div.bluelayout {
+	position:absolute;
+	top:5%; left:5%; right:5%; bottom:5%;
+	color:#fff;
+	font-family:Georgia!important;
+	font-size:16px!important;
+	font-weight:100;
+	background:#02cde8;
+	background:-moz-linear-gradient(#02cde8, #013068);
+	background:-o-linear-gradient(#02cde8, #013068);
+	background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#02cde8), to(#013068));/* Older webkit syntax */
+	background:-webkit-linear-gradient(#02cde8, #013068);
+	filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#02cde8', endColorstr='#013068',GradientType=0 );
+	box-shadow:inset 0 1px 2px #FFFFFF, 0 0 3px #999999, 0px 2px 12px #fff;
+	border:1px solid #02cde8;
+	border-radius:10px;
+	padding:7px 20px 7px 20px;
+	overflow: auto;}
+	
+div.bluelayout ul {
+	margin-top:15px;}
+	
+a.menuheader {
+	outline:none;
+	cursor:default;
+	text-decoration:none;
+	color:#fff;
+	font-family:ThinTxt!important;
+	font-size:26px!important;
+	font-weight:bold;
+	background:rgba(0, 0, 0, 0.5);
+	box-shadow:inset 0 0 4px #000;
+	border:0px;
+	border-radius:10px;
+	padding:7px 20px 7px 20px;}
+	
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+	$(this).bind("contextmenu", function(event) {
+		event.preventDefault();
+	});
+});
+</script>
+</head>
+<body>
+	<div class="bgov"></div>
+	<div class="bluelayout">
+		<center>
+			<a class="menuheader">Instructions:</a><br />
+		</center>
+		
+		<ul>
+			<li>Double click the webcam icon (or hold for 2s) in the navigation bar to toggle CamDesk's visibility.</li><br />
+			<li>Double click CamDesk to hide it.</li><br />
+			<li>Right click CamDesk's overlay for your settings, or you can hold for 2s to show.</li><br />
+			<li>Double click the settings dialog to hide it.</li>
+		</ul>
+	</div>
+</body>
+</html>
