@@ -2,170 +2,249 @@
 <html>
   <head>
     <title>CamDesk</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=9" />
-    <link rel="stylesheet"  href="css/style.css" />
-    <link rel="stylesheet" href="css/fotorama.css" />
-    <script src="js/jquery.min.js"></script>
-    <script src="js/fotorama.js"></script>
-    <script src="js/FileSaver.min.js"></script>
-    <script src="js/canvas-toBlob.js"></script>
-<!--
-    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.3/fotorama.css" />
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.3/fotorama.js"></script>
--->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="assets/images/logo.png" type="image/x-icon">
     <meta name="Description" content="CamDesk The Desktop Webcam Widget">
     <meta name="Keywords" content="camdesk, the, desktop, webcam, widget, free, open, source, cross, platform, windows, linux, mac, os, x, 10, chrome, extension, screencasting, surveillance, system, display, easy, simple">
     <meta name="application-name" content="CamDesk"> 
     <meta name="author" content="Michael Schwartz">
+    <link rel="stylesheet" href="assets/et-line-font-plugin/style.css">
+    <link rel="stylesheet" href="assets/tether/tether.min.css">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/socicon/css/socicon.min.css">
+    <link rel="stylesheet" href="assets/dropdown/css/style.css">
+    <link rel="stylesheet" href="assets/theme/css/style.css">
+    <link rel="stylesheet" href="assets/mobirise-slider/style.css">
+    <link rel="stylesheet" href="assets/mobirise-gallery/style.css">
+    <link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css">
+    <link rel="stylesheet" href="assets/fonts/font-awesome.css">
   </head>
   <body>
-    <div class="head" id="home">
-      <a class="logo">
-        <span class="logotxt appname"></span>
-      </a>
-    
-      <!-- Menubar Icons and Dialogs -->
-      <a class="barsicon fr">
-        <input id="toggle" type="checkbox" class="hide">
-        <label class="pointa" for="toggle">&equiv;</label>
-      </a>
-    
-      <div class="navlinks"></div>
-      
-      <a class="menubtn" href="http://sourceforge.net/projects/camdesk/files/latest/download">Download</a>
-    </div>
-    
-    <div class="wholefill mgtop headimage">
-      <article class="wholefill greeting">
-        <section>
-          <h1>CamDesk</h1>
-          <h3>
-            Desktop Webcam Widget
-    
-            <div>
-              <p>
-                <a class="button" href="http://sourceforge.net/projects/camdesk/files/latest/download" target="_blank">
-                  Download <span class="appname"></span>
+    <section class="menu1" id="menu1-6">
+      <nav class="navbar navbar-dropdown navbar-fixed-top">
+        <div class="container container-wide">
+          <div class="mbr-table">
+            <div class="mbr-table-cell logo">
+              <div class="navbar-brand">
+                <a href="javascript:void(0)" class="navbar-logo">
+                  <img src="assets/images/logo-128x128.png" alt="CamDesk">
                 </a>
-              </p>
-    
-              <p>
-                <a class="fa fa-windows" href="http://sourceforge.net/projects/camdesk/files/1.2/camdesk-1.2.1.zip/download" target="_blank" title="Download for Windows Desktop"></a>
-                <a class="getmacv fa msicon-osx" href="http://sourceforge.net/projects/camdesk/files/camdesk-0.0.1-mac.dmg/download" target="_blank" title="Download for Mac OS X"></a>
-                <a class="getlinv fa fa-linux" href="http://sourceforge.net/projects/camdesk/files/1.1/camdesk-1.1-lin.tar.gz/download" target="_blank" title="Download for Linux"></a>
-                <a class="fa msicon-chrome" href="https://chrome.google.com/webstore/detail/camdesk/jmjgcfadcmkpmkfhecfcoghmaloblkod?utm_source=chrome-ntp-icon" target="_blank" title="Download for Chrome"></a>
-                <a class="fa fa-github" href="https://github.com/mikethedj4/CamDesk" target="_blank" title="Fork on Github"></a>
-              </p>
+              </div>
             </div>
-          </h3>
-        </section>
-        <section>
-          <!-- Displays webcam -->
-          <select id="videoSource" class="fl"></select>
-          <span class="fr">[Space] for Snapshot</span>
-          <br>
-          <video muted autoplay></video><br>
-          
-
-          <!-- Used to download snapped photo -->
-          <a id="save" data-action="toggle" class="hide">
-            Save Picture
-          </a>
-          <canvas class="hide" id="canvas"></canvas>
-          <img class="hide" id="theimage" />
-        </section>
-      </article>
-    </div>
-    
-    <div class="wfill" id="videos">
-      <h4 class="headtxt">videos:</h4>
-
-      <div class="preview" id="gallery">
-        <div class="fotorama" data-allowfullscreen="true" 
-          data-width="100%"
-          data-height="100%"
-          data-nav="thumbs"
-          data-fit="cover"
-          data-keyboard="true">
-          
-          <a href="https://www.youtube.com/watch?v=PigLQ-_YR1Y">CamDesk for Chrome</a>
-          <a href="https://www.youtube.com/watch?v=N992uK-QgfE">CamDesk for Linux</a>
-          <a href="https://www.youtube.com/watch?v=-hkAYJXzGno">CamDesk for Mac OS X</a>
-        </div>
-      </div>
-
-      <p>
-        &nbsp;
-      </p>
-    </div>
-    
-    <div id="docs" class="docs hide">
-      <h4 class="headtxt">requirements:</h4>
-      <article>
-        <section>
-          <h1 class="fa fa-windows"></h1>
-        </section>
-        <section class="ta">
-          <h2>Language</h2>
-          Visual Basic
-
-          <h2>Requirements</h2>
-          <a href="http://www.microsoft.com/net/" target="_blank">.NET Framework 4</a><br>
-          1.2MB of free space
-        </section>
-      </article>
-      <article>
-        <section>
-          <h1 class="fa msicon-osx"></h1>
-        </section>
-        <section class="ta">
-          <h2>Language</h2>
-          JavaScript
-
-          <h2>Requirements</h2>
-          93MB of free space
-        </section>
-      </article>
-      <article>
-        <section>
-          <h1 class="fa fa-linux"></h1>
-        </section>
-        <section class="ta">
-          <h2>Language</h2>
-          JavaScript
-
-          <h2>Requirements</h2>
-          40MB of free space
-        </section>
-      </article>
-    </div>
-    
-    <div class="hidez">
-      <div class="foot">
-        <a class="logo fl">
-          <span class="logotxt appname"></span>
-        </a>
-    
-        <div class="footlinks fr">
-          <div data-action="pushpagelinks">
-            <a href="#home" class="notinheader">Home</a>
-            <a href="#videos">Videos</a>
-            <!--<a href="#docs">Documentation</a>-->
-            <a href="https://www.facebook.com/pages/CamDesk/363216231833?ref=bookmarks" target="_blank">Facebook</a>
-            <a href="https://github.com/mikethedj4/CamDesk" target="_blank">Github</a>
-            <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=BSYGA2RB5ZJCC" target="_blank">Donate</a>
+            <div class="mbr-table-cell">
+              <ul class="nav-dropdown collapse pull-xs-right nav navbar-nav nav-list" id="exCollapsingNavbar">
+                <li class="nav-item">
+                  <a class="nav-link link" href="#videos">videos</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link link" href="https://github.com/mikethedj4/CamDesk" target="_blank">fork</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link link dropdown-toggle" href="#" data-toggle="dropdown-submenu">donate</a>
+                  <div class="dropdown-menu">
+                    <a class="dropdown-item" href="https://www.paypal.me/mikethedj4" target="_blank">Donate via PayPal</a>
+                    <a class="dropdown-item" href="https://cash.me/$mschwar4" target="_blank">Donate via SquareCash</a>
+                  </div>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link link dropdown-toggle" href="#" data-toggle="dropdown-submenu">DOWNLOAD</a>
+                  <div class="dropdown-menu">
+                    <a class="dropdown-item" href="https://sourceforge.net/projects/camdesk/files/1.2/camdesk-1.2.1.zip/download" target="_blank">WINDOWS</a>
+                    <a class="dropdown-item" href="http://sourceforge.net/projects/camdesk/files/camdesk-0.0.1-mac.dmg/download" target="_blank">MAC OS X</a>
+                    <a class="dropdown-item" href="http://sourceforge.net/projects/camdesk/files/1.1/camdesk-1.1-lin.tar.gz/download" target="_blank">LINUX</a>
+                    <a class="dropdown-item" href="https://chrome.google.com/webstore/detail/camdesk/jmjgcfadcmkpmkfhecfcoghmaloblkod?utm_source=chrome-ntp-icon" target="_blank">CHROME</a>
+                  </div>
+                </li>
+              </ul>
+              <button class="navbar-toggler pull-xs-right" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar">
+                <em></em>
+              </button>
+            </div>
           </div>
-    
-          <div class="author">
-            Made by <a href="http://mikethedj4.github.io/" target="_blank">Michael</a> with love and caffeine.
+        </div>
+      </nav>
+    </section>
+    <section class="mbr-slider mbr-section mbr-section__container carousel slide slider3 mbr-section-nopadding mbr-after-navbar" data-ride="carousel" data-keyboard="false" data-wrap="true" data-interval="false" id="slider3-4">
+      <div>
+        <div>
+          <div>
+            <div class="carousel-inner" role="listbox">
+              <div class="mbr-section mbr-section-hero carousel-item dark center mbr-section-full active" data-bg-video-slide="false" style="background-image: url(assets/images/burglar-2000x1332.jpg);">
+                <div class="mbr-table-cell">
+                  <div class="mbr-overlay"></div>
+                  <div class="container-slide container">
+                    <div class="row">
+                      <div class="col-md-offset-1 col-md-10 vertical-middle">
+                        <h1 class="mbr-section-title styled">CamDesk</h1>
+                        <p class="mbr-section-lead lead">The Desktop WebCam Widget</p>
+                        <div class="mbr-section-btn">
+                          <a href="http://sourceforge.net/projects/camdesk/files/latest/download" target="_blank" class="btn btn-success" role="button">download</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <figure class="swiper-arrow-left swiper-arrow type-1" role="button" data-slide="prev" href="#slider3-4"><img alt="" src="assets/images/arrow-left.svg">
+              <div class="mbr-slider-slide"></div>
+            </figure>
+            <figure class="swiper-arrow-right swiper-arrow type-1" role="button" data-slide="next" href="#slider3-4"><img alt="" src="assets/images/arrow-right.svg">
+              <div class="mbr-slider-slide"></div>
+            </figure>
           </div>
         </div>
       </div>
-    </div>
+    </section>
+    
+    <!-- Gallery -->
+    <section id="videos" class="mbr-gallery mbr-section mbr-section--no-padding mbr-slider-carousel gallery gallery1" data-filter="false" style="background-color: rgb(255, 255, 255); padding-top: 0rem; padding-bottom: 0rem;">
+        <!-- Filter -->
 
-    <script src="js/shortcut.js"></script>
-    <script src="js/index.js"></script>
+
+        <!-- Gallery -->
+        <div class="mbr-gallery-row">
+            <div class=" mbr-gallery-layout-default">
+                <div>
+                    <div>
+                        <div class="mbr-gallery-item mbr-gallery-item__mobirise3 mbr-gallery-item--p0 video-slide" data-tags="Responsive" data-video-url="https://youtu.be/PigLQ-_YR1Y">
+                            <div href="#lb-gallery2-7" data-slide-to="0" data-toggle="modal">
+                                <img alt="" src="assets/images/2017-07-09-15-02-37.jpg">
+                            </div>
+                        </div><div class="mbr-gallery-item mbr-gallery-item__mobirise3 mbr-gallery-item--p0 video-slide" data-tags="Awesome" data-video-url="https://youtu.be/N992uK-QgfE">
+                            <div href="#lb-gallery2-7" data-slide-to="1" data-toggle="modal">
+                                <img alt="" src="assets/images/2017-07-09-15-02-53.jpg">
+                            </div>
+                        </div><div class="mbr-gallery-item mbr-gallery-item__mobirise3 mbr-gallery-item--p0 video-slide" data-tags="Creative" data-video-url="https://youtu.be/-hkAYJXzGno">
+                            <div href="#lb-gallery2-7" data-slide-to="2" data-toggle="modal">
+                                <img alt="" src="assets/images/2017-07-09-15-03-12.jpg">
+                            </div>
+                        </div><div class="mbr-gallery-item mbr-gallery-item__mobirise3 mbr-gallery-item--p0 video-slide" data-tags="Creative" data-video-url="https://www.youtube.com/watch?v=NJrDfVHrJMs">
+                            <div href="#lb-gallery2-7" data-slide-to="3" data-toggle="modal">
+                                <img alt="" src="assets/images/2017-07-09-15-03-47.jpg">
+                            </div>
+                        </div><div class="mbr-gallery-item mbr-gallery-item__mobirise3 mbr-gallery-item--p0 video-slide" data-tags="Creative" data-video-url="https://youtu.be/U07-1vETsfQ">
+                            <div href="#lb-gallery2-7" data-slide-to="4" data-toggle="modal">
+                                <img alt="" src="assets/images/2017-07-09-15-07-34.jpg">
+                            </div>
+                        </div><div class="mbr-gallery-item mbr-gallery-item__mobirise3 mbr-gallery-item--p0 video-slide" data-tags="Creative" data-video-url="https://www.youtube.com/watch?v=lS4GeKOS5Ow">
+                            <div href="#lb-gallery2-7" data-slide-to="5" data-toggle="modal">
+                                <img alt="" src="assets/images/2017-07-09-15-08-31.jpg">
+                            </div>
+                        </div><div class="mbr-gallery-item mbr-gallery-item__mobirise3 mbr-gallery-item--p0 video-slide" data-tags="Creative" data-video-url="https://youtu.be/wDWyo9Xg_a0">
+                            <div href="#lb-gallery2-7" data-slide-to="6" data-toggle="modal">
+                                <img alt="" src="assets/images/2017-07-09-15-13-16.jpg">
+                            </div>
+                        </div><div class="mbr-gallery-item mbr-gallery-item__mobirise3 mbr-gallery-item--p0 video-slide" data-tags="Creative" data-video-url="https://youtu.be/vJcHOz8bub8">
+                            <div href="#lb-gallery2-7" data-slide-to="7" data-toggle="modal">
+                                <img alt="" src="assets/images/2017-07-09-15-05-07.jpg">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+
+        <!-- Lightbox -->
+        <div data-app-prevent-settings="" class="mbr-slider modal fade carousel slide" tabindex="-1" data-keyboard="true" data-interval="false" id="lb-gallery2-7">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <ol class="carousel-indicators">
+                            <li data-app-prevent-settings="" data-target="#lb-gallery2-7" class=" active" data-slide-to="0"></li><li data-app-prevent-settings="" data-target="#lb-gallery2-7" data-slide-to="1"></li><li data-app-prevent-settings="" data-target="#lb-gallery2-7" data-slide-to="2"></li><li data-app-prevent-settings="" data-target="#lb-gallery2-7" data-slide-to="3"></li><li data-app-prevent-settings="" data-target="#lb-gallery2-7" data-slide-to="4"></li><li data-app-prevent-settings="" data-target="#lb-gallery2-7" data-slide-to="5"></li><li data-app-prevent-settings="" data-target="#lb-gallery2-7" data-slide-to="6"></li><li data-app-prevent-settings="" data-target="#lb-gallery2-7" data-slide-to="7"></li>
+                        </ol>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active video-container">
+                                <img alt="" src="assets/images/code-man.jpg">
+                            </div><div class="carousel-item video-container">
+                                <img alt="" src="assets/images/bike.jpg">
+                            </div><div class="carousel-item video-container">
+                                <img alt="" src="assets/images/coworkers.jpg">
+                            </div><div class="carousel-item video-container">
+                                <img alt="" src="assets/images/coworkers.jpg">
+                            </div><div class="carousel-item video-container">
+                                <img alt="" src="assets/images/coworkers.jpg">
+                            </div><div class="carousel-item video-container">
+                                <img alt="" src="assets/images/coworkers.jpg">
+                            </div><div class="carousel-item video-container">
+                                <img alt="" src="assets/images/coworkers.jpg">
+                            </div><div class="carousel-item video-container">
+                                <img alt="" src="assets/images/coworkers.jpg">
+                            </div>
+                        </div>
+                        <a class="swiper-arrow-left swiper-arrow type-1" role="button" data-slide="prev" href="#lb-gallery2-7">
+                            <img alt="" src="assets/images/arrow-left.svg">
+                        </a>
+                        <a class="swiper-arrow-right swiper-arrow type-1" role="button" data-slide="next" href="#lb-gallery2-7">
+                            <img alt="" src="assets/images/arrow-right.svg">
+                        </a>
+
+                        <a class="close" href="#" role="button" data-dismiss="modal">
+                            <span aria-hidden="true">×</span>
+                            <span class="sr-only">Close</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Share to social media -->
+    <section class="mbr-section mbr-section-md-padding" id="social1-h" style="background-color: rgb(255, 255, 255); padding-top: 90px; padding-bottom: 90px;">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8 col-md-offset-2 text-xs-center">
+            <h3 class="mbr-section-title display-2 styled">
+              <span>Share this page!</span>
+            </h3>
+            <div>
+              <p>&nbsp;</p>
+              <div class="mbr-social-likes" data-counters="false">
+                <a class="btn btn-social facebook" title="Share link on Facebook" href="https://www.facebook.com/sharer/sharer.php?u=http%3A//mikethedj4.github.io/CamDesk/" target="_blank">
+                  <i class="socicon socicon-facebook" style="color: #000;"></i>
+                </a>
+                <a class="btn btn-social twitter" title="Share link on Twitter" href="https://twitter.com/home?status=Check%20this%20out!%20%23CamDesk%20The%20%23Desktop%20%23Webcam%20%23Widget%3A%20http%3A//mikethedj4.github.io/CamDesk/" target="_blank">
+                  <i class="socicon socicon-twitter" style="color: #000;"></i>
+                </a>
+                <a class="btn btn-social plusone" title="Share link on Google+" href="https://plus.google.com/share?url=http%3A//mikethedj4.github.io/CamDesk/" target="_blank">
+                  <i class="socicon socicon-google" style="color: #000;"></i>
+                </a>
+                <a class="btn btn-social twitter" title="Share link on LinkedIn" href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A//mikethedj4.github.io/CamDesk/&title=Check%20this%20out!%20%23CamDesk%20The%20%23Desktop%20%23Webcam%20%23Widget&summary=Check%20this%20out!%20%23CamDesk%20The%20%23Desktop%20%23Webcam%20%23Widget%3A%20http%3A//mikethedj4.github.io/CamDesk/&source=" target="_blank">
+                  <i class="socicon socicon-linkedin" style="color: #000;"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <section class="mbr-section--bg-adapted mbr-section--relative mbr-section mbr-section--no-padding" id="footer2-c" style="background-color: rgb(33, 33, 33);">
+      <footer class="footer">
+        <div class="content-wide">
+          <div class="container-wide container">
+            <div class="row">
+              <div class="copyright nopadding"><span>Made by <a href="https://mikethedj4.github.io/" class="text-success">Michael</a> with love and caffeine.</span></div>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </section>
+    
+    <script src="assets/web/assets/jquery/jquery.min.js"></script>
+    <script src="assets/tether/tether.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/smooth-scroll/SmoothScroll.js"></script>
+    <script src="assets/dropdown/js/script.min.js"></script>
+    <script src="assets/bootstrap-carousel-swipe/bootstrap-carousel-swipe.js"></script>
+    <script src="assets/masonry/masonry.pkgd.min.js"></script>
+    <script src="assets/imagesloaded/imagesloaded.pkgd.min.js"></script>
+    <script src="assets/theme/js/script.js"></script>
+    <script src="assets/SliderPaginator/script.js"></script>
+    <script src="assets/mobirise-gallery/player.min.js"></script>
+    <script src="assets/mobirise-gallery/script.js"></script>
   </body>
 </html>
