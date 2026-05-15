@@ -1,8 +1,7 @@
-@import '../libraries/all.min.css';
-
-  @tailwind base;
+@tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 /* Custom CSS for glassmorphism effects, mirror transform, and scrollbar styling */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 body {

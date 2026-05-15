@@ -23,198 +23,197 @@
     <link rel="icon" type="image/svg+xml" href="imgs/logo.svg" />
     <link rel="apple-touch-icon" href="imgs/logo.svg">
     <link rel="stylesheet" href="dist/bundle.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.1/dist/cdn.min.js" defer></script>
-  
   </head>
   <body>
-    
-<div class="max-w-[1600px] mx-auto px-4 md:px-6 py-4 min-h-screen flex flex-col text-gray-200 antialiased" x-data="camdeskApp()" x-init="initApp()" x-cloak="">
-  <!-- Top Navigation Bar: only essential links (Donate, Source, Share) -->
-  <nav class="flex items-center justify-between mb-6 glass-panel rounded-2xl px-5 py-2.5 backdrop-blur-lg">
-    <div class="flex items-center gap-2">
-      <svg class="w-8 h-8" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 135.46666 135.46667">
-        <defs id="defs1">
-          <linearGradient id="linearGradient269">
-            <stop style="stop-color:#93f0f8;stop-opacity:1;" offset="0.04081633" id="stop271"></stop>
-            <stop style="stop-color:#112339;stop-opacity:1;" offset="0.51913267" id="stop269"></stop>
-            <stop style="stop-color:#93f0f8;stop-opacity:1;" offset="1" id="stop270"></stop>
-          </linearGradient>
-          <linearGradient id="linearGradient231">
-            <stop style="stop-color:#a7d0ff;stop-opacity:0;" offset="0" id="stop232"></stop>
-            <stop style="stop-color:#00050b;stop-opacity:1;" offset="1" id="stop231"></stop>
-          </linearGradient>
-          <linearGradient id="linearGradient229">
-            <stop style="stop-color:#00050b;stop-opacity:1;" offset="0" id="stop229"></stop>
-            <stop style="stop-color:#5ea7ff;stop-opacity:0.15000001;" offset="1" id="stop230"></stop>
-          </linearGradient>
-          <linearGradient id="linearGradient6">
-            <stop style="stop-color:#ffffff;stop-opacity:0.32237872;" offset="0" id="stop6"></stop>
-            <stop style="stop-color:#ffffff;stop-opacity:0;" offset="1" id="stop7"></stop>
-          </linearGradient>
-          <linearGradient id="linearGradient3">
-            <stop style="stop-color:#f2f3f8;stop-opacity:0.37402192;" offset="0" id="stop4"></stop>
-            <stop style="stop-color:#f2f3f8;stop-opacity:0;" offset="1" id="stop5"></stop>
-          </linearGradient>
-          <linearGradient id="linearGradient2">
-            <stop style="stop-color:#fa7a39;stop-opacity:1;" offset="0" id="stop3"></stop>
-            <stop style="stop-color:#80170f;stop-opacity:1;" offset="1" id="stop2"></stop>
-          </linearGradient>
-          <radialGradient xlink:href="#linearGradient2" id="radialGradient3" cx="93.711334" cy="138.63626" fx="93.711334" fy="138.63626" r="20.657707" gradientTransform="matrix(0.87219204,1.5073455,-1.45817,0.8437376,214.30123,-128.56644)" gradientUnits="userSpaceOnUse"></radialGradient>
-          <linearGradient xlink:href="#linearGradient3" id="linearGradient5" x1="94.484467" y1="128.84198" x2="107.22198" y2="142.4352" gradientUnits="userSpaceOnUse" gradientTransform="matrix(0.7504,0,0,0.59200001,24.4021,52.405733)"></linearGradient>
-          <linearGradient xlink:href="#linearGradient6" id="linearGradient7" x1="83.723228" y1="144.52933" x2="105.02012" y2="144.52933" gradientUnits="userSpaceOnUse" gradientTransform="matrix(1.0829442,0,0,0.96388257,-6.7692528,5.2200286)"></linearGradient>
-          <linearGradient xlink:href="#linearGradient231" id="linearGradient232" x1="107.27587" y1="183.24402" x2="107.27587" y2="106.89392" gradientUnits="userSpaceOnUse"></linearGradient>
-          <linearGradient xlink:href="#linearGradient231" id="linearGradient233" gradientUnits="userSpaceOnUse" x1="107.27587" y1="183.24402" x2="107.27587" y2="106.89392" gradientTransform="matrix(1.2870191,0,0,1.2870191,-30.888803,-41.637559)"></linearGradient>
-          <linearGradient xlink:href="#linearGradient229" id="linearGradient266" x1="72.24118" y1="145.06897" x2="142.99751" y2="145.06897" gradientUnits="userSpaceOnUse"></linearGradient>
-          <radialGradient xlink:href="#linearGradient269" id="radialGradient271" cx="107.61935" cy="145.06897" fx="107.61935" fy="145.06897" r="31.354572" gradientTransform="matrix(1,0,0,1.0212766,0,-3.0865716)" gradientUnits="userSpaceOnUse"></radialGradient>
-        </defs>
-        <g id="layer1" transform="translate(-18.168053,-58.120144)">
-          <g id="g235" style="display:inline" transform="matrix(1.1445218,0,0,1.1206778,-37.271306,-36.722095)">
-            <ellipse style="display:inline;opacity:1;fill:url(#linearGradient233);fill-opacity:1;stroke:none;stroke-width:12.8324;stroke-linecap:square" id="ellipse232" cx="107.61935" cy="145.06897" rx="48.689953" ry="49.725903"></ellipse>
-            <ellipse style="display:inline;opacity:1;fill:#00050b;fill-opacity:1;stroke:none;stroke-width:12.4525;stroke-linecap:square" id="ellipse233" cx="107.61935" cy="145.06897" rx="47.248573" ry="48.253857"></ellipse>
-            <ellipse style="display:inline;opacity:1;fill:url(#linearGradient232);fill-opacity:1;stroke:none;stroke-width:9.9706;stroke-linecap:square" id="ellipse231" cx="107.61935" cy="145.06897" rx="37.83157" ry="38.636494"></ellipse>
-            <ellipse style="display:inline;opacity:1;fill:#00050b;fill-opacity:1;stroke:none;stroke-width:9.84128;stroke-linecap:square" id="ellipse230" cx="107.61935" cy="145.06897" rx="37.340889" ry="38.135372"></ellipse>
-            <ellipse style="display:inline;opacity:1;fill:url(#linearGradient266);stroke:none;stroke-width:9.324;stroke-linecap:square" id="ellipse229" cx="107.61935" cy="145.06897" rx="35.378162" ry="36.130886"></ellipse>
-            <ellipse style="display:inline;opacity:1;fill:url(#radialGradient271);stroke:none;stroke-width:8.26357;stroke-linecap:square" id="ellipse269" cx="107.61935" cy="145.06897" rx="31.354572" ry="32.02169"></ellipse>
-            <ellipse style="display:inline;opacity:1;fill:#00050b;fill-opacity:1;stroke:none;stroke-width:7.6687;stroke-linecap:square" id="ellipse7" cx="107.61935" cy="145.06897" rx="29.097435" ry="29.716528"></ellipse>
-            <path id="ellipse5" style="display:inline;opacity:1;fill:url(#linearGradient7);stroke:none;stroke-width:4.46225;stroke-linecap:square" d="m 100.76437,123.57725 a 16.865901,20.952114 0 0 0 -16.866036,20.95209 16.865901,20.952114 0 0 0 16.866036,20.95208 16.865901,20.952114 0 0 0 4.55985,-0.78052 21.223227,19.958898 0 0 1 -18.131363,-19.74619 21.223227,19.958898 0 0 1 19.768833,-19.91205 16.865901,20.952114 0 0 0 -6.19732,-1.46541 z"></path>
-            <ellipse style="display:inline;opacity:1;fill:url(#radialGradient3);stroke:none;stroke-width:5.47025;stroke-linecap:square" id="path2" cx="107.61935" cy="145.06897" rx="20.755844" ry="21.197456"></ellipse>
-            <ellipse style="display:inline;opacity:1;fill:url(#linearGradient5);stroke:none;stroke-width:1.93458;stroke-linecap:square" id="ellipse3" cx="103.07552" cy="134.56836" rx="9.1461849" ry="7.2620916"></ellipse>
-            <ellipse style="display:inline;opacity:1;fill:#f2f3f8;fill-opacity:1;stroke:none;stroke-width:1.8112;stroke-linecap:square" id="path1" cx="118.02181" cy="134.56837" rx="7.6055689" ry="7.6546369"></ellipse>
-          </g>
-        </g>
-      </svg>
-      <span class="font-bold text-xl tracking-tight bg-gradient-to-r from-white to-cyan-300 bg-clip-text text-transparent">CamDesk</span>
-      <span class="text-[11px] font-mono bg-white/10 px-2 py-0.5 rounded-full text-cyan-300 ml-2">Webcam Studio PWA</span>
-    </div>
-    <div class="flex items-center gap-3">
-      <!-- Donate link: supports the original author -->
-      <a href="https://michaelsboost.com/donate" target="_blank" class="text-sm bg-amber-500/20 hover:bg-amber-500/30 px-3 py-1.5 rounded-full transition flex items-center gap-1"><i class="fas fa-heart text-amber-400"></i><span class="hidden sm:inline">Donate</span></a>
-      <!-- Source code link: GitHub repository -->
-      <a href="https://github.com/michaelsboost/CamDesk" target="_blank" class="text-sm bg-slate-700 hover:bg-slate-600 px-3 py-1.5 rounded-full transition flex items-center gap-1"><i class="fab fa-github"></i><span class="hidden sm:inline">Source</span></a>
-      <!-- Share button: uses Web Share API to share the app URL -->
-      <button @click="shareApp()" class="text-sm bg-cyan-500/20 hover:bg-cyan-500/30 px-3 py-1.5 rounded-full transition flex items-center gap-1"><i class="fas fa-share-alt"></i><span class="hidden sm:inline">Share</span></button>
-    </div>
-  </nav>
+    <div class="max-w-[1600px] mx-auto px-4 md:px-6 py-4 min-h-screen flex flex-col text-gray-200 antialiased" x-data="camdeskApp()" x-init="initApp()" x-cloak="">
+      <!-- Top Navigation Bar: only essential links (Donate, Source, Share) -->
+      <nav class="flex items-center justify-between mb-6 glass-panel rounded-2xl px-5 py-2.5 backdrop-blur-lg">
+        <div class="flex items-center gap-2">
+          <svg class="w-8 h-8" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 135.46666 135.46667">
+            <defs id="defs1">
+              <linearGradient id="linearGradient269">
+                <stop style="stop-color:#93f0f8;stop-opacity:1;" offset="0.04081633" id="stop271"></stop>
+                <stop style="stop-color:#112339;stop-opacity:1;" offset="0.51913267" id="stop269"></stop>
+                <stop style="stop-color:#93f0f8;stop-opacity:1;" offset="1" id="stop270"></stop>
+              </linearGradient>
+              <linearGradient id="linearGradient231">
+                <stop style="stop-color:#a7d0ff;stop-opacity:0;" offset="0" id="stop232"></stop>
+                <stop style="stop-color:#00050b;stop-opacity:1;" offset="1" id="stop231"></stop>
+              </linearGradient>
+              <linearGradient id="linearGradient229">
+                <stop style="stop-color:#00050b;stop-opacity:1;" offset="0" id="stop229"></stop>
+                <stop style="stop-color:#5ea7ff;stop-opacity:0.15000001;" offset="1" id="stop230"></stop>
+              </linearGradient>
+              <linearGradient id="linearGradient6">
+                <stop style="stop-color:#ffffff;stop-opacity:0.32237872;" offset="0" id="stop6"></stop>
+                <stop style="stop-color:#ffffff;stop-opacity:0;" offset="1" id="stop7"></stop>
+              </linearGradient>
+              <linearGradient id="linearGradient3">
+                <stop style="stop-color:#f2f3f8;stop-opacity:0.37402192;" offset="0" id="stop4"></stop>
+                <stop style="stop-color:#f2f3f8;stop-opacity:0;" offset="1" id="stop5"></stop>
+              </linearGradient>
+              <linearGradient id="linearGradient2">
+                <stop style="stop-color:#fa7a39;stop-opacity:1;" offset="0" id="stop3"></stop>
+                <stop style="stop-color:#80170f;stop-opacity:1;" offset="1" id="stop2"></stop>
+              </linearGradient>
+              <radialGradient xlink:href="#linearGradient2" id="radialGradient3" cx="93.711334" cy="138.63626" fx="93.711334" fy="138.63626" r="20.657707" gradientTransform="matrix(0.87219204,1.5073455,-1.45817,0.8437376,214.30123,-128.56644)" gradientUnits="userSpaceOnUse"></radialGradient>
+              <linearGradient xlink:href="#linearGradient3" id="linearGradient5" x1="94.484467" y1="128.84198" x2="107.22198" y2="142.4352" gradientUnits="userSpaceOnUse" gradientTransform="matrix(0.7504,0,0,0.59200001,24.4021,52.405733)"></linearGradient>
+              <linearGradient xlink:href="#linearGradient6" id="linearGradient7" x1="83.723228" y1="144.52933" x2="105.02012" y2="144.52933" gradientUnits="userSpaceOnUse" gradientTransform="matrix(1.0829442,0,0,0.96388257,-6.7692528,5.2200286)"></linearGradient>
+              <linearGradient xlink:href="#linearGradient231" id="linearGradient232" x1="107.27587" y1="183.24402" x2="107.27587" y2="106.89392" gradientUnits="userSpaceOnUse"></linearGradient>
+              <linearGradient xlink:href="#linearGradient231" id="linearGradient233" gradientUnits="userSpaceOnUse" x1="107.27587" y1="183.24402" x2="107.27587" y2="106.89392" gradientTransform="matrix(1.2870191,0,0,1.2870191,-30.888803,-41.637559)"></linearGradient>
+              <linearGradient xlink:href="#linearGradient229" id="linearGradient266" x1="72.24118" y1="145.06897" x2="142.99751" y2="145.06897" gradientUnits="userSpaceOnUse"></linearGradient>
+              <radialGradient xlink:href="#linearGradient269" id="radialGradient271" cx="107.61935" cy="145.06897" fx="107.61935" fy="145.06897" r="31.354572" gradientTransform="matrix(1,0,0,1.0212766,0,-3.0865716)" gradientUnits="userSpaceOnUse"></radialGradient>
+            </defs>
+            <g id="layer1" transform="translate(-18.168053,-58.120144)">
+              <g id="g235" style="display:inline" transform="matrix(1.1445218,0,0,1.1206778,-37.271306,-36.722095)">
+                <ellipse style="display:inline;opacity:1;fill:url(#linearGradient233);fill-opacity:1;stroke:none;stroke-width:12.8324;stroke-linecap:square" id="ellipse232" cx="107.61935" cy="145.06897" rx="48.689953" ry="49.725903"></ellipse>
+                <ellipse style="display:inline;opacity:1;fill:#00050b;fill-opacity:1;stroke:none;stroke-width:12.4525;stroke-linecap:square" id="ellipse233" cx="107.61935" cy="145.06897" rx="47.248573" ry="48.253857"></ellipse>
+                <ellipse style="display:inline;opacity:1;fill:url(#linearGradient232);fill-opacity:1;stroke:none;stroke-width:9.9706;stroke-linecap:square" id="ellipse231" cx="107.61935" cy="145.06897" rx="37.83157" ry="38.636494"></ellipse>
+                <ellipse style="display:inline;opacity:1;fill:#00050b;fill-opacity:1;stroke:none;stroke-width:9.84128;stroke-linecap:square" id="ellipse230" cx="107.61935" cy="145.06897" rx="37.340889" ry="38.135372"></ellipse>
+                <ellipse style="display:inline;opacity:1;fill:url(#linearGradient266);stroke:none;stroke-width:9.324;stroke-linecap:square" id="ellipse229" cx="107.61935" cy="145.06897" rx="35.378162" ry="36.130886"></ellipse>
+                <ellipse style="display:inline;opacity:1;fill:url(#radialGradient271);stroke:none;stroke-width:8.26357;stroke-linecap:square" id="ellipse269" cx="107.61935" cy="145.06897" rx="31.354572" ry="32.02169"></ellipse>
+                <ellipse style="display:inline;opacity:1;fill:#00050b;fill-opacity:1;stroke:none;stroke-width:7.6687;stroke-linecap:square" id="ellipse7" cx="107.61935" cy="145.06897" rx="29.097435" ry="29.716528"></ellipse>
+                <path id="ellipse5" style="display:inline;opacity:1;fill:url(#linearGradient7);stroke:none;stroke-width:4.46225;stroke-linecap:square" d="m 100.76437,123.57725 a 16.865901,20.952114 0 0 0 -16.866036,20.95209 16.865901,20.952114 0 0 0 16.866036,20.95208 16.865901,20.952114 0 0 0 4.55985,-0.78052 21.223227,19.958898 0 0 1 -18.131363,-19.74619 21.223227,19.958898 0 0 1 19.768833,-19.91205 16.865901,20.952114 0 0 0 -6.19732,-1.46541 z"></path>
+                <ellipse style="display:inline;opacity:1;fill:url(#radialGradient3);stroke:none;stroke-width:5.47025;stroke-linecap:square" id="path2" cx="107.61935" cy="145.06897" rx="20.755844" ry="21.197456"></ellipse>
+                <ellipse style="display:inline;opacity:1;fill:url(#linearGradient5);stroke:none;stroke-width:1.93458;stroke-linecap:square" id="ellipse3" cx="103.07552" cy="134.56836" rx="9.1461849" ry="7.2620916"></ellipse>
+                <ellipse style="display:inline;opacity:1;fill:#f2f3f8;fill-opacity:1;stroke:none;stroke-width:1.8112;stroke-linecap:square" id="path1" cx="118.02181" cy="134.56837" rx="7.6055689" ry="7.6546369"></ellipse>
+              </g>
+            </g>
+          </svg>
+          <span class="font-bold text-xl tracking-tight bg-gradient-to-r from-white to-cyan-300 bg-clip-text text-transparent">CamDesk</span>
+          <span class="text-[11px] font-mono bg-white/10 px-2 py-0.5 rounded-full text-cyan-300 ml-2">Webcam Studio PWA</span>
+        </div>
+        <div class="flex items-center gap-3">
+          <!-- Donate link: supports the original author -->
+          <a href="https://michaelsboost.com/donate" target="_blank" class="text-sm bg-amber-500/20 hover:bg-amber-500/30 px-3 py-1.5 rounded-full transition flex items-center gap-1"><i class="fas fa-heart text-amber-400"></i><span class="hidden sm:inline">Donate</span></a>
+          <!-- Source code link: GitHub repository -->
+          <a href="https://github.com/michaelsboost/CamDesk" target="_blank" class="text-sm bg-slate-700 hover:bg-slate-600 px-3 py-1.5 rounded-full transition flex items-center gap-1"><i class="fab fa-github"></i><span class="hidden sm:inline">Source</span></a>
+          <!-- Share button: uses Web Share API to share the app URL -->
+          <button @click="shareApp()" class="text-sm bg-cyan-500/20 hover:bg-cyan-500/30 px-3 py-1.5 rounded-full transition flex items-center gap-1"><i class="fas fa-share-alt"></i><span class="hidden sm:inline">Share</span></button>
+        </div>
+      </nav>
 
-  <!-- Main 2-Column Workspace: Camera preview (left) + Controls/Gallery (right) -->
-  <div class="flex flex-col lg:flex-row gap-6 flex-1">
-    <!-- LEFT COLUMN: Camera Preview Panel -->
-    <div class="flex-1 lg:flex-[1.3] glass-card p-5 rounded-2xl flex flex-col">
-      <div class="flex justify-between items-center mb-3 flex-wrap gap-2">
-        <h3 class="font-semibold text-lg flex items-center gap-2"><span class="text-cyan-400">🎥</span> Live Feed</h3>
-        <div class="flex gap-2">
-          <!-- Toggle camera on/off -->
-          <button @click="toggleCameraPower()" class="text-xs bg-white/10 px-3 py-1 rounded-full hover:bg-white/20 transition" x-text="cameraEnabled ? 'Turn off' : 'Turn on'"></button>
-          <!-- Switch to next available camera -->
-          <button @click="switchCamera()" class="text-xs bg-white/10 px-3 py-1 rounded-full hover:bg-white/20 transition"><i class="fas fa-sync-alt mr-1"></i>Switch</button>
-        </div>
-      </div>
-      <div class="video-container relative bg-black/40 rounded-xl overflow-hidden aspect-video">
-        <!-- Video element: receives the camera stream -->
-        <video id="cameraPreview" x-ref="videoElem" autoplay="" playsinline="" muted="" class="w-full h-full object-cover transition duration-200" :class="{'mirror-active': mirrorEnabled}"></video>
-        <!-- Overlay: recording indicator and microphone status -->
-        <div class="absolute bottom-3 left-3 flex gap-2 text-xs bg-black/50 backdrop-blur-sm px-2 py-1 rounded-full">
-          <template x-if="isRecording"><span class="text-red-400 animate-pulse"><i class="fas fa-circle"></i> REC</span></template>
-          <template x-if="micEnabled &amp;&amp; !isRecording"><span class="text-green-300"><i class="fas fa-microphone"></i> mic on</span></template>
-        </div>
-        <div class="absolute top-3 right-3 bg-black/50 rounded-full px-2 py-1 text-xs"><span x-text="cameraLabel || 'Camera'"></span></div>
-      </div>
-      <!-- Quick controls row: Mirror, Fullscreen, PiP, Resolution, Microphone -->
-      <div class="mt-4 flex flex-wrap justify-between items-center gap-2">
-        <div class="flex gap-2">
-          <button @click="toggleMirror" class="bg-slate-800/70 hover:bg-slate-700 p-2 rounded-xl transition" :class="{'bg-blue-600/40': mirrorEnabled}" title="Mirror"><i class="fas fa-arrows-alt-h"></i></button>
-          <button @click="toggleFullscreen()" class="bg-slate-800/70 hover:bg-slate-700 p-2 rounded-xl"><i class="fas fa-expand"></i></button>
-          <button @click="enterPiP()" x-show="pipSupported" class="bg-slate-800/70 hover:bg-slate-700 p-2 rounded-xl"><i class="fas fa-video"></i> PiP</button>
-        </div>
-        <div class="flex gap-2 items-center">
-          <select x-model="selectedResolution" @change="changeResolution()" class="bg-slate-800 border border-slate-600 rounded-lg text-sm px-2 py-1.5">
-            <option value="auto">Auto</option><option value="720p">720p</option><option value="1080p">1080p</option>
-          </select>
-          <label class="flex items-center gap-1 text-xs"><i class="fas fa-microphone-alt"></i><input type="checkbox" x-model="micEnabled" @change="toggleMicrophone()" class="ml-1"></label>
-        </div>
-      </div>
-      <!-- Camera device selector: populated from enumerateDevices() -->
-      <div class="mt-3 flex flex-wrap items-center gap-2 text-sm">
-        <span class="text-slate-300"><i class="fas fa-camera"></i> Device:</span>
-        <select x-model="selectedDeviceId" @change="selectCameraDevice()" class="bg-slate-800 border border-slate-600 rounded-lg px-2 py-1.5 text-xs flex-1">
-          <option value="">-- Select webcam --</option>
-          <template x-for="device in videoDevices" :key="device.deviceId"><option :value="device.deviceId" x-text="device.label || `Camera ${device.deviceId.slice(0,5)}`"></option></template>
-        </select>
-      </div>
-    </div>
-
-    <!-- RIGHT COLUMN: Control Panel & Gallery -->
-    <div class="flex-1 lg:flex-[1] glass-card p-5 rounded-2xl flex flex-col">
-      <div class="flex items-center justify-between border-b border-cyan-500/20 pb-2 mb-4">
-        <h3 class="font-semibold text-lg flex gap-2"><span class="text-cyan-400">🧩</span> Studio Controls</h3>
-        <span class="text-[11px] bg-cyan-500/20 rounded-full px-2 py-0.5">v2.0 · full feature</span>
-      </div>
-      
-      <!-- Primary action buttons: Photo, Record, Share last, Snap now -->
-      <div class="grid grid-cols-2 gap-3 mb-5">
-        <button @click="takePhoto()" class="bg-gradient-to-br from-blue-600 to-indigo-700 hover:from-blue-500 hover:to-indigo-600 text-white font-semibold py-2.5 rounded-xl shadow-lg transition flex items-center justify-center gap-2"><i class="fas fa-camera"></i> Photo</button>
-        <template x-if="!isRecording">
-          <button @click="startRecording()" :disabled="!mediaRecorderSupported" class="bg-red-600/80 hover:bg-red-700 disabled:opacity-50 font-semibold py-2.5 rounded-xl flex items-center justify-center gap-2"><i class="fas fa-circle"></i> Record</button>
-        </template>
-        <template x-if="isRecording">
-          <button @click="stopRecording()" class="bg-amber-600 hover:bg-amber-700 font-semibold py-2.5 rounded-xl flex items-center justify-center gap-2"><i class="fas fa-stop"></i> Stop</button>
-        </template>
-        <button @click="shareLastCapture()" :disabled="!lastCaptureBlob || !webShareSupported" class="bg-emerald-600/70 hover:bg-emerald-600 disabled:opacity-40 py-2.5 rounded-xl flex items-center justify-center gap-2"><i class="fas fa-share-alt"></i> Share last</button>
-        <button @click="downloadCurrentPreview()" class="bg-slate-700 hover:bg-slate-600 py-2.5 rounded-xl flex items-center justify-center gap-2"><i class="fas fa-download"></i> Snap now</button>
-      </div>
-      
-      <!-- Activity Log: provides user feedback for actions -->
-      <div class="bg-black/30 rounded-xl p-3 mb-4">
-        <div class="flex justify-between text-xs text-cyan-300 mb-1"><span>📋 Activity</span><span @click="clearActivityLog" class="cursor-pointer hover:text-white"><i class="fas fa-trash-alt text-[10px]"></i> clear</span></div>
-        <ul class="text-gray-300 text-xs space-y-1 max-h-28 overflow-y-auto">
-          <template x-for="log in activityLog.slice(0, 5)" :key="log.id">
-            <li class="border-l-2 border-cyan-500/50 pl-2 py-1" x-text="log.text"></li>
-          </template>
-          <template x-if="activityLog.length === 0">
-            <li class="text-gray-500 italic">— ready —</li>
-          </template>
-        </ul>
-      </div>
-
-      <!-- Session Gallery: displays captured photos/videos with hover actions -->
-      <div>
-        <div class="flex justify-between items-center mb-2">
-          <h4 class="font-semibold text-sm"><i class="fas fa-images mr-2 text-blue-400"></i>Session gallery</h4>
-          <button @click="clearGallery" class="text-xs text-red-300 hover:text-red-200"><i class="fas fa-trash-alt"></i> clear all</button>
-        </div>
-        <div class="gallery-scroll overflow-x-auto pb-2 flex gap-3">
-          <template x-for="(item, idx) in galleryItems" :key="idx">
-            <div class="relative flex-shrink-0 w-20 h-20 bg-slate-800 rounded-xl overflow-hidden border border-slate-600 group">
-              <img x-if="item.type === 'photo'" :src="item.url" class="w-full h-full object-cover">
-              <video x-if="item.type === 'video'" :src="item.url" class="w-full h-full object-cover" muted=""></video>
-              <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition flex items-center justify-center gap-2 text-xs">
-                <button @click="downloadItem(item)" class="text-white p-1"><i class="fas fa-download"></i></button>
-                <button @click="shareItem(item)" x-show="webShareSupported" class="text-white p-1"><i class="fas fa-share"></i></button>
-                <button @click="deleteItem(idx)" class="text-white p-1"><i class="fas fa-trash"></i></button>
-              </div>
+      <!-- Main 2-Column Workspace: Camera preview (left) + Controls/Gallery (right) -->
+      <div class="flex flex-col lg:flex-row gap-6 flex-1">
+        <!-- LEFT COLUMN: Camera Preview Panel -->
+        <div class="flex-1 lg:flex-[1.3] glass-card p-5 rounded-2xl flex flex-col">
+          <div class="flex justify-between items-center mb-3 flex-wrap gap-2">
+            <h3 class="font-semibold text-lg flex items-center gap-2"><span class="text-cyan-400">🎥</span> Live Feed</h3>
+            <div class="flex gap-2">
+              <!-- Toggle camera on/off -->
+              <button @click="toggleCameraPower()" class="text-xs bg-white/10 px-3 py-1 rounded-full hover:bg-white/20 transition" x-text="cameraEnabled ? 'Turn off' : 'Turn on'"></button>
+              <!-- Switch to next available camera -->
+              <button @click="switchCamera()" class="text-xs bg-white/10 px-3 py-1 rounded-full hover:bg-white/20 transition"><i class="fas fa-sync-alt mr-1"></i>Switch</button>
             </div>
-          </template>
-          <div x-show="galleryItems.length === 0" class="text-slate-400 text-xs flex items-center justify-center w-full py-2">No captures yet</div>
+          </div>
+          <div class="video-container relative bg-black/40 rounded-xl overflow-hidden aspect-video">
+            <!-- Video element: receives the camera stream -->
+            <video id="cameraPreview" x-ref="videoElem" autoplay="" playsinline="" muted="" class="w-full h-full object-cover transition duration-200" :class="{'mirror-active': mirrorEnabled}"></video>
+            <!-- Overlay: recording indicator and microphone status -->
+            <div class="absolute bottom-3 left-3 flex gap-2 text-xs bg-black/50 backdrop-blur-sm px-2 py-1 rounded-full">
+              <template x-if="isRecording"><span class="text-red-400 animate-pulse"><i class="fas fa-circle"></i> REC</span></template>
+              <template x-if="micEnabled &amp;&amp; !isRecording"><span class="text-green-300"><i class="fas fa-microphone"></i> mic on</span></template>
+            </div>
+            <div class="absolute top-3 right-3 bg-black/50 rounded-full px-2 py-1 text-xs"><span x-text="cameraLabel || 'Camera'"></span></div>
+          </div>
+          <!-- Quick controls row: Mirror, Fullscreen, PiP, Resolution, Microphone -->
+          <div class="mt-4 flex flex-wrap justify-between items-center gap-2">
+            <div class="flex gap-2">
+              <button @click="toggleMirror" class="bg-slate-800/70 hover:bg-slate-700 p-2 rounded-xl transition" :class="{'bg-blue-600/40': mirrorEnabled}" title="Mirror"><i class="fas fa-arrows-alt-h"></i></button>
+              <button @click="toggleFullscreen()" class="bg-slate-800/70 hover:bg-slate-700 p-2 rounded-xl"><i class="fas fa-expand"></i></button>
+              <button @click="enterPiP()" x-show="pipSupported" class="bg-slate-800/70 hover:bg-slate-700 p-2 rounded-xl"><i class="fas fa-video"></i> PiP</button>
+            </div>
+            <div class="flex gap-2 items-center">
+              <select x-model="selectedResolution" @change="changeResolution()" class="bg-slate-800 border border-slate-600 rounded-lg text-sm px-2 py-1.5">
+                <option value="auto">Auto</option><option value="720p">720p</option><option value="1080p">1080p</option>
+              </select>
+              <label class="flex items-center gap-1 text-xs"><i class="fas fa-microphone-alt"></i><input type="checkbox" x-model="micEnabled" @change="toggleMicrophone()" class="ml-1"></label>
+            </div>
+          </div>
+          <!-- Camera device selector: populated from enumerateDevices() -->
+          <div class="mt-3 flex flex-wrap items-center gap-2 text-sm">
+            <span class="text-slate-300"><i class="fas fa-camera"></i> Device:</span>
+            <select x-model="selectedDeviceId" @change="selectCameraDevice()" class="bg-slate-800 border border-slate-600 rounded-lg px-2 py-1.5 text-xs flex-1">
+              <option value="">-- Select webcam --</option>
+              <template x-for="device in videoDevices" :key="device.deviceId"><option :value="device.deviceId" x-text="device.label || `Camera ${device.deviceId.slice(0,5)}`"></option></template>
+            </select>
+          </div>
+        </div>
+
+        <!-- RIGHT COLUMN: Control Panel & Gallery -->
+        <div class="flex-1 lg:flex-[1] glass-card p-5 rounded-2xl flex flex-col">
+          <div class="flex items-center justify-between border-b border-cyan-500/20 pb-2 mb-4">
+            <h3 class="font-semibold text-lg flex gap-2"><span class="text-cyan-400">🧩</span> Studio Controls</h3>
+            <span class="text-[11px] bg-cyan-500/20 rounded-full px-2 py-0.5">v2.0 · full feature</span>
+          </div>
+          
+          <!-- Primary action buttons: Photo, Record, Share last, Snap now -->
+          <div class="grid grid-cols-2 gap-3 mb-5">
+            <button @click="takePhoto()" class="bg-gradient-to-br from-blue-600 to-indigo-700 hover:from-blue-500 hover:to-indigo-600 text-white font-semibold py-2.5 rounded-xl shadow-lg transition flex items-center justify-center gap-2"><i class="fas fa-camera"></i> Photo</button>
+            <template x-if="!isRecording">
+              <button @click="startRecording()" :disabled="!mediaRecorderSupported" class="bg-red-600/80 hover:bg-red-700 disabled:opacity-50 font-semibold py-2.5 rounded-xl flex items-center justify-center gap-2"><i class="fas fa-circle"></i> Record</button>
+            </template>
+            <template x-if="isRecording">
+              <button @click="stopRecording()" class="bg-amber-600 hover:bg-amber-700 font-semibold py-2.5 rounded-xl flex items-center justify-center gap-2"><i class="fas fa-stop"></i> Stop</button>
+            </template>
+            <button @click="shareLastCapture()" :disabled="!lastCaptureBlob || !webShareSupported" class="bg-emerald-600/70 hover:bg-emerald-600 disabled:opacity-40 py-2.5 rounded-xl flex items-center justify-center gap-2"><i class="fas fa-share-alt"></i> Share last</button>
+            <button @click="downloadCurrentPreview()" class="bg-slate-700 hover:bg-slate-600 py-2.5 rounded-xl flex items-center justify-center gap-2"><i class="fas fa-download"></i> Snap now</button>
+          </div>
+          
+          <!-- Activity Log: provides user feedback for actions -->
+          <div class="bg-black/30 rounded-xl p-3 mb-4">
+            <div class="flex justify-between text-xs text-cyan-300 mb-1"><span>📋 Activity</span><span @click="clearActivityLog" class="cursor-pointer hover:text-white"><i class="fas fa-trash-alt text-[10px]"></i> clear</span></div>
+            <ul class="text-gray-300 text-xs space-y-1 max-h-28 overflow-y-auto">
+              <template x-for="log in activityLog.slice(0, 5)" :key="log.id">
+                <li class="border-l-2 border-cyan-500/50 pl-2 py-1" x-text="log.text"></li>
+              </template>
+              <template x-if="activityLog.length === 0">
+                <li class="text-gray-500 italic">— ready —</li>
+              </template>
+            </ul>
+          </div>
+
+          <!-- Session Gallery: displays captured photos/videos with hover actions -->
+          <div>
+            <div class="flex justify-between items-center mb-2">
+              <h4 class="font-semibold text-sm"><i class="fas fa-images mr-2 text-blue-400"></i>Session gallery</h4>
+              <button @click="clearGallery" class="text-xs text-red-300 hover:text-red-200"><i class="fas fa-trash-alt"></i> clear all</button>
+            </div>
+            <div class="gallery-scroll overflow-x-auto pb-2 flex gap-3">
+              <template x-for="(item, idx) in galleryItems" :key="idx">
+                <div class="relative flex-shrink-0 w-20 h-20 bg-slate-800 rounded-xl overflow-hidden border border-slate-600 group">
+                  <img x-if="item.type === 'photo'" :src="item.url" class="w-full h-full object-cover">
+                  <video x-if="item.type === 'video'" :src="item.url" class="w-full h-full object-cover" muted=""></video>
+                  <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition flex items-center justify-center gap-2 text-xs">
+                    <button @click="downloadItem(item)" class="text-white p-1"><i class="fas fa-download"></i></button>
+                    <button @click="shareItem(item)" x-show="webShareSupported" class="text-white p-1"><i class="fas fa-share"></i></button>
+                    <button @click="deleteItem(idx)" class="text-white p-1"><i class="fas fa-trash"></i></button>
+                  </div>
+                </div>
+              </template>
+              <div x-show="galleryItems.length === 0" class="text-slate-400 text-xs flex items-center justify-center w-full py-2">No captures yet</div>
+            </div>
+          </div>
+
+          <!-- Footer: privacy note, legacy version link, press mentions -->
+          <div class="mt-5 pt-3 border-t border-white/10 text-xs text-slate-400 flex justify-between flex-wrap gap-2">
+            <span><i class="fas fa-shield-alt"></i> Privacy-first: media stays local</span>
+            <span>⭐ featured by <a href="https://www.omgubuntu.co.uk/2012/10/camdesk-for-linux-adds-webcam-window-to-the-desktop" target="_blank" class="text-cyan-400 hover:underline">OMG! Ubuntu</a>, <a href="https://www.makeuseof.com/tag/add-a-customizable-webcam-widget-to-your-desktop-with-the-simple-lightweight-camdesk-windows-linux/" target="_blank" class="text-cyan-400 hover:underline">MakeUseOf</a>, and <a href="https://www.igrsm.org/igrsm2022/submissionstemplates.html" target="_blank" class="text-cyan-400 hover:underline">IGRSM Conference</a></span>
+          </div>
         </div>
       </div>
 
-      <!-- Footer: privacy note, legacy version link, press mentions -->
-      <div class="mt-5 pt-3 border-t border-white/10 text-xs text-slate-400 flex justify-between flex-wrap gap-2">
-        <span><i class="fas fa-shield-alt"></i> Privacy-first: media stays local</span>
-        <span>⭐ featured by <a href="https://www.omgubuntu.co.uk/2012/10/camdesk-for-linux-adds-webcam-window-to-the-desktop" target="_blank" class="text-cyan-400 hover:underline">OMG! Ubuntu</a>, <a href="https://www.makeuseof.com/tag/add-a-customizable-webcam-widget-to-your-desktop-with-the-simple-lightweight-camdesk-windows-linux/" target="_blank" class="text-cyan-400 hover:underline">MakeUseOf</a>, and <a href="https://www.igrsm.org/igrsm2022/submissionstemplates.html" target="_blank" class="text-cyan-400 hover:underline">IGRSM Conference</a></span>
+      <!-- Status Bar: shows current time and offline/PWA status -->
+      <div class="mt-6 glass-panel rounded-2xl p-3 flex flex-wrap justify-between items-center text-[12px] text-gray-400">
+        <div>CamDesk · webcam studio | <span x-text="new Date().toLocaleTimeString()"></span></div>
+        <div class="flex gap-4">
+          <span>🔒 offline cache: active</span>
+          <span><i class="fas fa-sync-alt" x-show="cameraEnabled"></i> live stream</span>
+        </div>
       </div>
     </div>
-  </div>
-
-  <!-- Status Bar: shows current time and offline/PWA status -->
-  <div class="mt-6 glass-panel rounded-2xl p-3 flex flex-wrap justify-between items-center text-[12px] text-gray-400">
-    <div>CamDesk · webcam studio | <span x-text="new Date().toLocaleTimeString()"></span></div>
-    <div class="flex gap-4">
-      <span>🔒 offline cache: active</span>
-      <span><i class="fas fa-sync-alt" x-show="cameraEnabled"></i> live stream</span>
-    </div>
-  </div>
-</div>
 
     <script src="dist/script.js"></script>
     <script src="https://storage.googleapis.com/workbox-cdn/releases/6.4.1/workbox-sw.js"></script>
