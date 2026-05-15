@@ -16,11 +16,11 @@ Take photos, record videos, use Picture-in-Picture, switch cameras, mirror your 
 
 CamDesk is designed to be:
 
-* lightweight
-* privacy-first
-* offline capable
-* cross-platform
-* easy to use
+* lightweight  
+* privacy-first  
+* offline capable  
+* cross-platform  
+* easy to use  
 
 No accounts. No uploads. No tracking. Just your camera and your device.
 
@@ -28,22 +28,22 @@ No accounts. No uploads. No tracking. Just your camera and your device.
 
 ## 🌟 Features
 
-✅ Photo capture
-✅ Video recording
-✅ Picture-in-Picture (PiP)
-✅ Webcam switching
-✅ Resolution controls
-✅ Mirror mode
-✅ Fullscreen support
-✅ Session gallery
-✅ Share API support
-✅ Installable PWA
-✅ Offline support
-✅ Privacy-first architecture
-✅ No accounts
-✅ No uploads
-✅ No tracking
-✅ Open source
+✅ Photo capture  
+✅ Video recording  
+✅ Picture-in-Picture (PiP)  
+✅ Webcam switching  
+✅ Resolution controls  
+✅ Mirror mode  
+✅ Fullscreen support  
+✅ Session gallery  
+✅ Share API support  
+✅ Installable PWA  
+✅ Offline support  
+✅ Privacy-first architecture  
+✅ No accounts  
+✅ No uploads  
+✅ No tracking  
+✅ Open source  
 
 ---
 
@@ -53,20 +53,20 @@ CamDesk has been completely rebuilt from scratch as a modern Progressive Web App
 
 The web app is now the primary and recommended version because it allows:
 
-* one codebase across all devices
-* faster updates
-* easier maintenance
-* offline support
-* native-like installation on desktop and mobile
+* one codebase across all devices  
+* faster updates  
+* easier maintenance  
+* offline support  
+* native-like installation on desktop and mobile  
 
 You can install CamDesk directly from your browser on:
 
-* Windows
-* macOS
-* Linux
-* Android
-* ChromeOS
-* iPhone/iPad
+* Windows  
+* macOS  
+* Linux  
+* Android  
+* ChromeOS  
+* iPhone/iPad  
 
 ---
 
@@ -82,12 +82,12 @@ CamDesk runs entirely in your browser.
 
 That means:
 
-* ✅ No cloud uploads
-* ✅ No backend
-* ✅ No analytics
-* ✅ No tracking
-* ✅ No telemetry
-* ✅ No accounts required
+* ✅ No cloud uploads  
+* ✅ No backend  
+* ✅ No analytics  
+* ✅ No tracking  
+* ✅ No telemetry  
+* ✅ No accounts required  
 
 Your photos and recordings stay on your device.
 
@@ -97,14 +97,14 @@ Your photos and recordings stay on your device.
 
 CamDesk uses modern browser APIs and lightweight open-source tools:
 
-* Alpine.js
-* Tailwind CSS
-* MediaRecorder API
-* WebRTC / getUserMedia
-* Picture-in-Picture API
-* Web Share API
-* Service Workers
-* Progressive Web App APIs
+* Alpine.js  
+* Tailwind CSS  
+* MediaRecorder API  
+* WebRTC / getUserMedia  
+* Picture-in-Picture API  
+* Web Share API  
+* Service Workers  
+* Progressive Web App APIs  
 
 ---
 
@@ -137,19 +137,19 @@ The original desktop versions are over 10 years old and are no longer actively m
 
 ### Windows
 
-[Download for Windows](https://sourceforge.net/projects/camdesk/files/1.2/camdesk-1.2.1.zip/download?utm_source=chatgpt.com)
+[Download for Windows](https://sourceforge.net/projects/camdesk/files/1.2/camdesk-1.2.1.zip/download)
 
 ### macOS
 
-[Download for macOS](http://sourceforge.net/projects/camdesk/files/camdesk-0.0.1-mac.dmg/download?utm_source=chatgpt.com)
+[Download for macOS](http://sourceforge.net/projects/camdesk/files/camdesk-0.0.1-mac.dmg/download)
 
 ### Linux
 
-[Download for Linux](http://sourceforge.net/projects/camdesk/files/1.1/camdesk-1.1-lin.tar.gz/download?utm_source=chatgpt.com)
+[Download for Linux](http://sourceforge.net/projects/camdesk/files/1.1/camdesk-1.1-lin.tar.gz/download)
 
 ### Chrome Extension
 
-[Chrome Web Store](https://chrome.google.com/webstore/detail/camdesk/jmjgcfadcmkpmkfhecfcoghmaloblkod?utm_source=chatgpt.com)
+[Chrome Web Store](https://chrome.google.com/webstore/detail/camdesk/jmjgcfadcmkpmkfhecfcoghmaloblkod)
 
 ---
 
@@ -159,13 +159,13 @@ Pull requests, ideas, improvements, and bug fixes are always welcome.
 
 Things you can help improve:
 
-* UI/UX
-* device compatibility
-* accessibility
-* mobile experience
-* recording features
-* browser API support
-* offline functionality
+* UI/UX  
+* device compatibility  
+* accessibility  
+* mobile experience  
+* recording features  
+* browser API support  
+* offline functionality  
 
 To contribute:
 
@@ -182,9 +182,9 @@ Make your changes and submit a pull request.
 
 CamDesk has been featured by:
 
-* [OMG! Ubuntu](https://www.omgubuntu.co.uk/2012/10/camdesk-for-linux-adds-webcam-window-to-the-desktop?utm_source=chatgpt.com)
-* [MakeUseOf](https://www.makeuseof.com/tag/add-a-customizable-webcam-widget-to-your-desktop-with-the-simple-lightweight-camdesk-windows-linux/?utm_source=chatgpt.com)
-* [IGRSM Conference](https://www.igrsm.org/igrsm2022/submissionstemplates.html?utm_source=chatgpt.com)
+* [OMG! Ubuntu](https://www.omgubuntu.co.uk/2012/10/camdesk-for-linux-adds-webcam-window-to-the-desktop)
+* [MakeUseOf](https://www.makeuseof.com/tag/add-a-customizable-webcam-widget-to-your-desktop-with-the-simple-lightweight-camdesk-windows-linux/)
+* [IGRSM Conference](https://www.igrsm.org/igrsm2022/submissionstemplates.html)
 
 ---
 
@@ -192,9 +192,9 @@ CamDesk has been featured by:
 
 If CamDesk has been useful to you, consider supporting the project:
 
-* ⭐ Star the repository
-* 📢 Share CamDesk with others
-* 💸 Donate: [michaelsboost.com/donate](https://michaelsboost.com/donate?utm_source=chatgpt.com)
+* ⭐ Star the repository  
+* 📢 Share CamDesk with others  
+* 💸 Donate: [michaelsboost.com/donate](https://michaelsboost.com/donate)  
 
 ---
 
@@ -209,4 +209,4 @@ See: [LICENSE](LICENSE)
 ## 📧 Contact
 
 Michael Schwartz
-[michaelsboost.com](https://michaelsboost.com?utm_source=chatgpt.com)
+[michaelsboost.com](https://michaelsboost.com)
