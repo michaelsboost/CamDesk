@@ -1,0 +1,52 @@
+/* Custom CSS for glassmorphism effects, mirror transform, and scrollbar styling */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  background: radial-gradient(circle at 20% 30%, #0a0c12, #030507);
+  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  min-height: 100vh;
+}
+/* Semi-transparent panels with backdrop blur (glass effect) */
+.glass-panel {
+  background: rgba(15, 20, 28, 0.65);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(56, 189, 248, 0.2);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+.glass-card {
+  background: rgba(12, 16, 24, 0.75);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(34, 211, 238, 0.2);
+  border-radius: 1.5rem;
+  transition: all 0.2s ease;
+}
+.glass-card:hover {
+  border-color: rgba(34, 211, 238, 0.5);
+  box-shadow: 0 10px 28px -8px rgba(0, 255, 255, 0.15);
+}
+/* Gradient button style */
+.btn-primary {
+  background: linear-gradient(105deg, #0b6e8f 0%, #0891b2 100%);
+  transition: all 0.2s;
+  box-shadow: 0 2px 8px rgba(6, 182, 212, 0.3);
+}
+.btn-primary:hover { transform: translateY(-1px); filter: brightness(1.05); }
+/* Mirror effect: flips video horizontally via CSS transform */
+.mirror-active { transform: scaleX(-1); }
+.video-container {
+  background: #000;
+  border-radius: 1.2rem;
+  overflow: hidden;
+  box-shadow: 0 20px 35px -12px black;
+}
+/* Custom scrollbar for gallery */
+.gallery-scroll::-webkit-scrollbar { height: 5px; }
+.gallery-scroll::-webkit-scrollbar-track { background: #1e293b; border-radius: 10px; }
+.gallery-scroll::-webkit-scrollbar-thumb { background: #0891b2; border-radius: 10px; }
+/* Alpine.js initial hide (prevents flash of unstyled content) */
+[x-cloak] { display: none !important; }
+/* Subtle press effect for interactive elements */
+button:active { transform: scale(0.97); transition: transform 0.05s; }@import '../libraries/all.min.css';
+
+  @tailwind base;
+@tailwind components;
+@tailwind utilities;

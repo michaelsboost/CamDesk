@@ -1,85 +1,60 @@
-<!DOCTYPE html>
-<html lang="en" data-theme="dark">
-  <head>
-    <title>CamDesk - Free Online Webcam Recorder, Camera App & PWA</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, interactive-widget=resizes-content">
-    <meta name="description" content="CamDesk is a free privacy-first webcam app for taking photos, recording videos, using Picture-in-Picture, sharing captures, and installing as a PWA.">
-    <meta name="author" content="Michael Schwartz">
-    <meta name="mobile-web-app-capable" content="yes">
-    <meta name="application-name" content="CamDesk - Free Online Webcam Recorder, Camera App & PWA">
-    <meta name="theme-color" content="#13171f">
-    <meta name="apple-mobile-web-app-title" content="CamDesk - Free Online Webcam Recorder, Camera App & PWA">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="msapplication-starturl" content="./index.html">
-    <meta name="msapplication-navbutton-color" content="#13171f">
-    <meta property="og:url" content="https://michaelsboost.com/CamDesk" />
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="CamDesk - Free Online Webcam Recorder, Camera App & PWA" />
-    <meta property="og:description" content="CamDesk is a free privacy-first webcam app for taking photos, recording videos, using Picture-in-Picture, sharing captures, and installing as a PWA." />
-    <link rel="manifest" href="manifest.json">
-    <link rel="shortcut icon" type="image/x-icon" href="imgs/logo.svg">
-    <link rel="icon" type="image/svg+xml" href="imgs/logo.svg" />
-    <link rel="apple-touch-icon" href="imgs/logo.svg">
-    <link rel="stylesheet" href="dist/bundle.css">
-    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.1/dist/cdn.min.js" defer></script>
-  
-  </head>
-  <body>
-    
-<div class="max-w-[1600px] mx-auto px-4 md:px-6 py-4 min-h-screen flex flex-col text-gray-200 antialiased" x-data="camdeskApp()" x-init="initApp()" x-cloak="">
+<!-- 
+  MAIN APPLICATION UI 
+  No modals, no onboarding — immediate camera access after permission.
+  The interface is split into two columns on desktop, stacked on mobile.
+-->
+<div class="max-w-[1600px] mx-auto px-4 md:px-6 py-4 min-h-screen flex flex-col text-gray-200 antialiased" x-data="camdeskApp()" x-init="initApp()" x-cloak>
   <!-- Top Navigation Bar: only essential links (Donate, Source, Share) -->
   <nav class="flex items-center justify-between mb-6 glass-panel rounded-2xl px-5 py-2.5 backdrop-blur-lg">
     <div class="flex items-center gap-2">
       <svg class="w-8 h-8" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 135.46666 135.46667">
         <defs id="defs1">
           <linearGradient id="linearGradient269">
-            <stop style="stop-color:#93f0f8;stop-opacity:1;" offset="0.04081633" id="stop271"></stop>
-            <stop style="stop-color:#112339;stop-opacity:1;" offset="0.51913267" id="stop269"></stop>
-            <stop style="stop-color:#93f0f8;stop-opacity:1;" offset="1" id="stop270"></stop>
+            <stop style="stop-color:#93f0f8;stop-opacity:1;" offset="0.04081633" id="stop271" />
+            <stop style="stop-color:#112339;stop-opacity:1;" offset="0.51913267" id="stop269" />
+            <stop style="stop-color:#93f0f8;stop-opacity:1;" offset="1" id="stop270" />
           </linearGradient>
           <linearGradient id="linearGradient231">
-            <stop style="stop-color:#a7d0ff;stop-opacity:0;" offset="0" id="stop232"></stop>
-            <stop style="stop-color:#00050b;stop-opacity:1;" offset="1" id="stop231"></stop>
+            <stop style="stop-color:#a7d0ff;stop-opacity:0;" offset="0" id="stop232" />
+            <stop style="stop-color:#00050b;stop-opacity:1;" offset="1" id="stop231" />
           </linearGradient>
           <linearGradient id="linearGradient229">
-            <stop style="stop-color:#00050b;stop-opacity:1;" offset="0" id="stop229"></stop>
-            <stop style="stop-color:#5ea7ff;stop-opacity:0.15000001;" offset="1" id="stop230"></stop>
+            <stop style="stop-color:#00050b;stop-opacity:1;" offset="0" id="stop229" />
+            <stop style="stop-color:#5ea7ff;stop-opacity:0.15000001;" offset="1" id="stop230" />
           </linearGradient>
           <linearGradient id="linearGradient6">
-            <stop style="stop-color:#ffffff;stop-opacity:0.32237872;" offset="0" id="stop6"></stop>
-            <stop style="stop-color:#ffffff;stop-opacity:0;" offset="1" id="stop7"></stop>
+            <stop style="stop-color:#ffffff;stop-opacity:0.32237872;" offset="0" id="stop6" />
+            <stop style="stop-color:#ffffff;stop-opacity:0;" offset="1" id="stop7" />
           </linearGradient>
           <linearGradient id="linearGradient3">
-            <stop style="stop-color:#f2f3f8;stop-opacity:0.37402192;" offset="0" id="stop4"></stop>
-            <stop style="stop-color:#f2f3f8;stop-opacity:0;" offset="1" id="stop5"></stop>
+            <stop style="stop-color:#f2f3f8;stop-opacity:0.37402192;" offset="0" id="stop4" />
+            <stop style="stop-color:#f2f3f8;stop-opacity:0;" offset="1" id="stop5" />
           </linearGradient>
           <linearGradient id="linearGradient2">
-            <stop style="stop-color:#fa7a39;stop-opacity:1;" offset="0" id="stop3"></stop>
-            <stop style="stop-color:#80170f;stop-opacity:1;" offset="1" id="stop2"></stop>
+            <stop style="stop-color:#fa7a39;stop-opacity:1;" offset="0" id="stop3" />
+            <stop style="stop-color:#80170f;stop-opacity:1;" offset="1" id="stop2" />
           </linearGradient>
-          <radialGradient xlink:href="#linearGradient2" id="radialGradient3" cx="93.711334" cy="138.63626" fx="93.711334" fy="138.63626" r="20.657707" gradientTransform="matrix(0.87219204,1.5073455,-1.45817,0.8437376,214.30123,-128.56644)" gradientUnits="userSpaceOnUse"></radialGradient>
-          <linearGradient xlink:href="#linearGradient3" id="linearGradient5" x1="94.484467" y1="128.84198" x2="107.22198" y2="142.4352" gradientUnits="userSpaceOnUse" gradientTransform="matrix(0.7504,0,0,0.59200001,24.4021,52.405733)"></linearGradient>
-          <linearGradient xlink:href="#linearGradient6" id="linearGradient7" x1="83.723228" y1="144.52933" x2="105.02012" y2="144.52933" gradientUnits="userSpaceOnUse" gradientTransform="matrix(1.0829442,0,0,0.96388257,-6.7692528,5.2200286)"></linearGradient>
-          <linearGradient xlink:href="#linearGradient231" id="linearGradient232" x1="107.27587" y1="183.24402" x2="107.27587" y2="106.89392" gradientUnits="userSpaceOnUse"></linearGradient>
-          <linearGradient xlink:href="#linearGradient231" id="linearGradient233" gradientUnits="userSpaceOnUse" x1="107.27587" y1="183.24402" x2="107.27587" y2="106.89392" gradientTransform="matrix(1.2870191,0,0,1.2870191,-30.888803,-41.637559)"></linearGradient>
-          <linearGradient xlink:href="#linearGradient229" id="linearGradient266" x1="72.24118" y1="145.06897" x2="142.99751" y2="145.06897" gradientUnits="userSpaceOnUse"></linearGradient>
-          <radialGradient xlink:href="#linearGradient269" id="radialGradient271" cx="107.61935" cy="145.06897" fx="107.61935" fy="145.06897" r="31.354572" gradientTransform="matrix(1,0,0,1.0212766,0,-3.0865716)" gradientUnits="userSpaceOnUse"></radialGradient>
+          <radialGradient xlink:href="#linearGradient2" id="radialGradient3" cx="93.711334" cy="138.63626" fx="93.711334" fy="138.63626" r="20.657707" gradientTransform="matrix(0.87219204,1.5073455,-1.45817,0.8437376,214.30123,-128.56644)" gradientUnits="userSpaceOnUse" />
+          <linearGradient xlink:href="#linearGradient3" id="linearGradient5" x1="94.484467" y1="128.84198" x2="107.22198" y2="142.4352" gradientUnits="userSpaceOnUse" gradientTransform="matrix(0.7504,0,0,0.59200001,24.4021,52.405733)" />
+          <linearGradient xlink:href="#linearGradient6" id="linearGradient7" x1="83.723228" y1="144.52933" x2="105.02012" y2="144.52933" gradientUnits="userSpaceOnUse" gradientTransform="matrix(1.0829442,0,0,0.96388257,-6.7692528,5.2200286)" />
+          <linearGradient xlink:href="#linearGradient231" id="linearGradient232" x1="107.27587" y1="183.24402" x2="107.27587" y2="106.89392" gradientUnits="userSpaceOnUse" />
+          <linearGradient xlink:href="#linearGradient231" id="linearGradient233" gradientUnits="userSpaceOnUse" x1="107.27587" y1="183.24402" x2="107.27587" y2="106.89392" gradientTransform="matrix(1.2870191,0,0,1.2870191,-30.888803,-41.637559)" />
+          <linearGradient xlink:href="#linearGradient229" id="linearGradient266" x1="72.24118" y1="145.06897" x2="142.99751" y2="145.06897" gradientUnits="userSpaceOnUse" />
+          <radialGradient xlink:href="#linearGradient269" id="radialGradient271" cx="107.61935" cy="145.06897" fx="107.61935" fy="145.06897" r="31.354572" gradientTransform="matrix(1,0,0,1.0212766,0,-3.0865716)" gradientUnits="userSpaceOnUse" />
         </defs>
         <g id="layer1" transform="translate(-18.168053,-58.120144)">
           <g id="g235" style="display:inline" transform="matrix(1.1445218,0,0,1.1206778,-37.271306,-36.722095)">
-            <ellipse style="display:inline;opacity:1;fill:url(#linearGradient233);fill-opacity:1;stroke:none;stroke-width:12.8324;stroke-linecap:square" id="ellipse232" cx="107.61935" cy="145.06897" rx="48.689953" ry="49.725903"></ellipse>
-            <ellipse style="display:inline;opacity:1;fill:#00050b;fill-opacity:1;stroke:none;stroke-width:12.4525;stroke-linecap:square" id="ellipse233" cx="107.61935" cy="145.06897" rx="47.248573" ry="48.253857"></ellipse>
-            <ellipse style="display:inline;opacity:1;fill:url(#linearGradient232);fill-opacity:1;stroke:none;stroke-width:9.9706;stroke-linecap:square" id="ellipse231" cx="107.61935" cy="145.06897" rx="37.83157" ry="38.636494"></ellipse>
-            <ellipse style="display:inline;opacity:1;fill:#00050b;fill-opacity:1;stroke:none;stroke-width:9.84128;stroke-linecap:square" id="ellipse230" cx="107.61935" cy="145.06897" rx="37.340889" ry="38.135372"></ellipse>
-            <ellipse style="display:inline;opacity:1;fill:url(#linearGradient266);stroke:none;stroke-width:9.324;stroke-linecap:square" id="ellipse229" cx="107.61935" cy="145.06897" rx="35.378162" ry="36.130886"></ellipse>
-            <ellipse style="display:inline;opacity:1;fill:url(#radialGradient271);stroke:none;stroke-width:8.26357;stroke-linecap:square" id="ellipse269" cx="107.61935" cy="145.06897" rx="31.354572" ry="32.02169"></ellipse>
-            <ellipse style="display:inline;opacity:1;fill:#00050b;fill-opacity:1;stroke:none;stroke-width:7.6687;stroke-linecap:square" id="ellipse7" cx="107.61935" cy="145.06897" rx="29.097435" ry="29.716528"></ellipse>
-            <path id="ellipse5" style="display:inline;opacity:1;fill:url(#linearGradient7);stroke:none;stroke-width:4.46225;stroke-linecap:square" d="m 100.76437,123.57725 a 16.865901,20.952114 0 0 0 -16.866036,20.95209 16.865901,20.952114 0 0 0 16.866036,20.95208 16.865901,20.952114 0 0 0 4.55985,-0.78052 21.223227,19.958898 0 0 1 -18.131363,-19.74619 21.223227,19.958898 0 0 1 19.768833,-19.91205 16.865901,20.952114 0 0 0 -6.19732,-1.46541 z"></path>
-            <ellipse style="display:inline;opacity:1;fill:url(#radialGradient3);stroke:none;stroke-width:5.47025;stroke-linecap:square" id="path2" cx="107.61935" cy="145.06897" rx="20.755844" ry="21.197456"></ellipse>
-            <ellipse style="display:inline;opacity:1;fill:url(#linearGradient5);stroke:none;stroke-width:1.93458;stroke-linecap:square" id="ellipse3" cx="103.07552" cy="134.56836" rx="9.1461849" ry="7.2620916"></ellipse>
-            <ellipse style="display:inline;opacity:1;fill:#f2f3f8;fill-opacity:1;stroke:none;stroke-width:1.8112;stroke-linecap:square" id="path1" cx="118.02181" cy="134.56837" rx="7.6055689" ry="7.6546369"></ellipse>
+            <ellipse style="display:inline;opacity:1;fill:url(#linearGradient233);fill-opacity:1;stroke:none;stroke-width:12.8324;stroke-linecap:square" id="ellipse232" cx="107.61935" cy="145.06897" rx="48.689953" ry="49.725903" />
+            <ellipse style="display:inline;opacity:1;fill:#00050b;fill-opacity:1;stroke:none;stroke-width:12.4525;stroke-linecap:square" id="ellipse233" cx="107.61935" cy="145.06897" rx="47.248573" ry="48.253857" />
+            <ellipse style="display:inline;opacity:1;fill:url(#linearGradient232);fill-opacity:1;stroke:none;stroke-width:9.9706;stroke-linecap:square" id="ellipse231" cx="107.61935" cy="145.06897" rx="37.83157" ry="38.636494" />
+            <ellipse style="display:inline;opacity:1;fill:#00050b;fill-opacity:1;stroke:none;stroke-width:9.84128;stroke-linecap:square" id="ellipse230" cx="107.61935" cy="145.06897" rx="37.340889" ry="38.135372" />
+            <ellipse style="display:inline;opacity:1;fill:url(#linearGradient266);stroke:none;stroke-width:9.324;stroke-linecap:square" id="ellipse229" cx="107.61935" cy="145.06897" rx="35.378162" ry="36.130886" />
+            <ellipse style="display:inline;opacity:1;fill:url(#radialGradient271);stroke:none;stroke-width:8.26357;stroke-linecap:square" id="ellipse269" cx="107.61935" cy="145.06897" rx="31.354572" ry="32.02169" />
+            <ellipse style="display:inline;opacity:1;fill:#00050b;fill-opacity:1;stroke:none;stroke-width:7.6687;stroke-linecap:square" id="ellipse7" cx="107.61935" cy="145.06897" rx="29.097435" ry="29.716528" />
+            <path id="ellipse5" style="display:inline;opacity:1;fill:url(#linearGradient7);stroke:none;stroke-width:4.46225;stroke-linecap:square" d="m 100.76437,123.57725 a 16.865901,20.952114 0 0 0 -16.866036,20.95209 16.865901,20.952114 0 0 0 16.866036,20.95208 16.865901,20.952114 0 0 0 4.55985,-0.78052 21.223227,19.958898 0 0 1 -18.131363,-19.74619 21.223227,19.958898 0 0 1 19.768833,-19.91205 16.865901,20.952114 0 0 0 -6.19732,-1.46541 z" />
+            <ellipse style="display:inline;opacity:1;fill:url(#radialGradient3);stroke:none;stroke-width:5.47025;stroke-linecap:square" id="path2" cx="107.61935" cy="145.06897" rx="20.755844" ry="21.197456" />
+            <ellipse style="display:inline;opacity:1;fill:url(#linearGradient5);stroke:none;stroke-width:1.93458;stroke-linecap:square" id="ellipse3" cx="103.07552" cy="134.56836" rx="9.1461849" ry="7.2620916" />
+            <ellipse style="display:inline;opacity:1;fill:#f2f3f8;fill-opacity:1;stroke:none;stroke-width:1.8112;stroke-linecap:square" id="path1" cx="118.02181" cy="134.56837" rx="7.6055689" ry="7.6546369" />
           </g>
         </g>
       </svg>
@@ -111,11 +86,11 @@
       </div>
       <div class="video-container relative bg-black/40 rounded-xl overflow-hidden aspect-video">
         <!-- Video element: receives the camera stream -->
-        <video id="cameraPreview" x-ref="videoElem" autoplay="" playsinline="" muted="" class="w-full h-full object-cover transition duration-200" :class="{'mirror-active': mirrorEnabled}"></video>
+        <video id="cameraPreview" x-ref="videoElem" autoplay playsinline muted class="w-full h-full object-cover transition duration-200" :class="{'mirror-active': mirrorEnabled}"></video>
         <!-- Overlay: recording indicator and microphone status -->
         <div class="absolute bottom-3 left-3 flex gap-2 text-xs bg-black/50 backdrop-blur-sm px-2 py-1 rounded-full">
           <template x-if="isRecording"><span class="text-red-400 animate-pulse"><i class="fas fa-circle"></i> REC</span></template>
-          <template x-if="micEnabled &amp;&amp; !isRecording"><span class="text-green-300"><i class="fas fa-microphone"></i> mic on</span></template>
+          <template x-if="micEnabled && !isRecording"><span class="text-green-300"><i class="fas fa-microphone"></i> mic on</span></template>
         </div>
         <div class="absolute top-3 right-3 bg-black/50 rounded-full px-2 py-1 text-xs"><span x-text="cameraLabel || 'Camera'"></span></div>
       </div>
@@ -186,7 +161,7 @@
           <template x-for="(item, idx) in galleryItems" :key="idx">
             <div class="relative flex-shrink-0 w-20 h-20 bg-slate-800 rounded-xl overflow-hidden border border-slate-600 group">
               <img x-if="item.type === 'photo'" :src="item.url" class="w-full h-full object-cover">
-              <video x-if="item.type === 'video'" :src="item.url" class="w-full h-full object-cover" muted=""></video>
+              <video x-if="item.type === 'video'" :src="item.url" class="w-full h-full object-cover" muted></video>
               <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition flex items-center justify-center gap-2 text-xs">
                 <button @click="downloadItem(item)" class="text-white p-1"><i class="fas fa-download"></i></button>
                 <button @click="shareItem(item)" x-show="webShareSupported" class="text-white p-1"><i class="fas fa-share"></i></button>
@@ -215,30 +190,3 @@
     </div>
   </div>
 </div>
-
-    <script src="dist/script.js"></script>
-    <script src="https://storage.googleapis.com/workbox-cdn/releases/6.4.1/workbox-sw.js"></script>
-    <script>
-      if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('./sw.js').then(reg => {
-          reg.addEventListener('updatefound', () => {
-            const newSW = reg.installing;
-            newSW.addEventListener('statechange', () => {
-              if (newSW.state === 'installed' && navigator.serviceWorker.controller) {
-                // Notify the user and reload if they confirm
-                if (confirm('A new version is available. Reload now?')) {
-                  window.location.reload();
-                }
-              }
-            });
-          });
-        });
-
-        // Ensure immediate activation of a new service worker
-        navigator.serviceWorker.ready.then(registration => {
-          registration.active.postMessage({ type: 'SKIP_WAITING' });
-        });
-      }
-    </script>
-  </body>
-</html>

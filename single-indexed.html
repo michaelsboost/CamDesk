@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+  <head>
+    <title>CamDesk - Free Online Webcam Recorder, Camera App & PWA</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="CamDesk is a free privacy-first webcam app for taking photos, recording videos, using Picture-in-Picture, sharing captures, and installing as a PWA.">
+    <meta name="author" content="Michael Schwartz">
+    <meta name="theme-color" content="#13171f">
+    <link rel="shortcut icon" type="image/x-icon" href="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+CjwhLS0gQ3JlYXRlZCB3aXRoIElua3NjYXBlIChodHRwOi8vd3d3Lmlua3NjYXBlLm9yZy8pIC0tPgoKPHN2ZwogICB3aWR0aD0iNTExLjk5OTk0IgogICBoZWlnaHQ9IjUxMS45OTk5NyIKICAgdmlld0JveD0iMCAwIDEzNS40NjY2NCAxMzUuNDY2NjYiCiAgIHZlcnNpb249IjEuMSIKICAgaWQ9InN2ZzEiCiAgIHhtbDpzcGFjZT0icHJlc2VydmUiCiAgIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIgogICB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciCiAgIHhtbG5zOnN2Zz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxkZWZzCiAgICAgaWQ9ImRlZnMxIj48bGluZWFyR3JhZGllbnQKICAgICAgIGlkPSJsaW5lYXJHcmFkaWVudDI2OSI+PHN0b3AKICAgICAgICAgc3R5bGU9InN0b3AtY29sb3I6IzkzZjBmODtzdG9wLW9wYWNpdHk6MTsiCiAgICAgICAgIG9mZnNldD0iMC4wNDA4MTYzMyIKICAgICAgICAgaWQ9InN0b3AyNzEiIC8+PHN0b3AKICAgICAgICAgc3R5bGU9InN0b3AtY29sb3I6IzExMjMzOTtzdG9wLW9wYWNpdHk6MTsiCiAgICAgICAgIG9mZnNldD0iMC41MTkxMzI2NyIKICAgICAgICAgaWQ9InN0b3AyNjkiIC8+PHN0b3AKICAgICAgICAgc3R5bGU9InN0b3AtY29sb3I6IzkzZjBmODtzdG9wLW9wYWNpdHk6MTsiCiAgICAgICAgIG9mZnNldD0iMSIKICAgICAgICAgaWQ9InN0b3AyNzAiIC8+PC9saW5lYXJHcmFkaWVudD48bGluZWFyR3JhZGllbnQKICAgICAgIGlkPSJsaW5lYXJHcmFkaWVudDIzMSI+PHN0b3AKICAgICAgICAgc3R5bGU9InN0b3AtY29sb3I6I2E3ZDBmZjtzdG9wLW9wYWNpdHk6MDsiCiAgICAgICAgIG9mZnNldD0iMCIKICAgICAgICAgaWQ9InN0b3AyMzIiIC8+PHN0b3AKICAgICAgICAgc3R5bGU9InN0b3AtY29sb3I6IzAwMDUwYjtzdG9wLW9wYWNpdHk6MTsiCiAgICAgICAgIG9mZnNldD0iMSIKICAgICAgICAgaWQ9InN0b3AyMzEiIC8+PC9saW5lYXJHcmFkaWVudD48bGluZWFyR3JhZGllbnQKICAgICAgIGlkPSJsaW5lYXJHcmFkaWVudDIyOSI+PHN0b3AKICAgICAgICAgc3R5bGU9InN0b3AtY29sb3I6IzAwMDUwYjtzdG9wLW9wYWNpdHk6MTsiCiAgICAgICAgIG9mZnNldD0iMCIKICAgICAgICAgaWQ9InN0b3AyMjkiIC8+PHN0b3AKICAgICAgICAgc3R5bGU9InN0b3AtY29sb3I6IzVlYTdmZjtzdG9wLW9wYWNpdHk6MC4xNTAwMDAwMTsiCiAgICAgICAgIG9mZnNldD0iMSIKICAgICAgICAgaWQ9InN0b3AyMzAiIC8+PC9saW5lYXJHcmFkaWVudD48bGluZWFyR3JhZGllbnQKICAgICAgIGlkPSJsaW5lYXJHcmFkaWVudDYiPjxzdG9wCiAgICAgICAgIHN0eWxlPSJzdG9wLWNvbG9yOiNmZmZmZmY7c3RvcC1vcGFjaXR5OjAuMzIyMzc4NzI7IgogICAgICAgICBvZmZzZXQ9IjAiCiAgICAgICAgIGlkPSJzdG9wNiIgLz48c3RvcAogICAgICAgICBzdHlsZT0ic3RvcC1jb2xvcjojZmZmZmZmO3N0b3Atb3BhY2l0eTowOyIKICAgICAgICAgb2Zmc2V0PSIxIgogICAgICAgICBpZD0ic3RvcDciIC8+PC9saW5lYXJHcmFkaWVudD48bGluZWFyR3JhZGllbnQKICAgICAgIGlkPSJsaW5lYXJHcmFkaWVudDMiPjxzdG9wCiAgICAgICAgIHN0eWxlPSJzdG9wLWNvbG9yOiNmMmYzZjg7c3RvcC1vcGFjaXR5OjAuMzc0MDIxOTI7IgogICAgICAgICBvZmZzZXQ9IjAiCiAgICAgICAgIGlkPSJzdG9wNCIgLz48c3RvcAogICAgICAgICBzdHlsZT0ic3RvcC1jb2xvcjojZjJmM2Y4O3N0b3Atb3BhY2l0eTowOyIKICAgICAgICAgb2Zmc2V0PSIxIgogICAgICAgICBpZD0ic3RvcDUiIC8+PC9saW5lYXJHcmFkaWVudD48bGluZWFyR3JhZGllbnQKICAgICAgIGlkPSJsaW5lYXJHcmFkaWVudDIiPjxzdG9wCiAgICAgICAgIHN0eWxlPSJzdG9wLWNvbG9yOiNmYTdhMzk7c3RvcC1vcGFjaXR5OjE7IgogICAgICAgICBvZmZzZXQ9IjAiCiAgICAgICAgIGlkPSJzdG9wMyIgLz48c3RvcAogICAgICAgICBzdHlsZT0ic3RvcC1jb2xvcjojODAxNzBmO3N0b3Atb3BhY2l0eToxOyIKICAgICAgICAgb2Zmc2V0PSIxIgogICAgICAgICBpZD0ic3RvcDIiIC8+PC9saW5lYXJHcmFkaWVudD48cmFkaWFsR3JhZGllbnQKICAgICAgIHhsaW5rOmhyZWY9IiNsaW5lYXJHcmFkaWVudDIiCiAgICAgICBpZD0icmFkaWFsR3JhZGllbnQzIgogICAgICAgY3g9IjkzLjcxMTMzNCIKICAgICAgIGN5PSIxMzguNjM2MjYiCiAgICAgICBmeD0iOTMuNzExMzM0IgogICAgICAgZnk9IjEzOC42MzYyNiIKICAgICAgIHI9IjIwLjY1NzcwNyIKICAgICAgIGdyYWRpZW50VHJhbnNmb3JtPSJtYXRyaXgoMC44NzIxOTIwNCwxLjUwNzM0NTUsLTEuNDU4MTcsMC44NDM3Mzc2LDIxNC4zMDEyMywtMTI4LjU2NjQ0KSIKICAgICAgIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIiAvPjxsaW5lYXJHcmFkaWVudAogICAgICAgeGxpbms6aHJlZj0iI2xpbmVhckdyYWRpZW50MyIKICAgICAgIGlkPSJsaW5lYXJHcmFkaWVudDUiCiAgICAgICB4MT0iOTQuNDg0NDY3IgogICAgICAgeTE9IjEyOC44NDE5OCIKICAgICAgIHgyPSIxMDcuMjIxOTgiCiAgICAgICB5Mj0iMTQyLjQzNTIiCiAgICAgICBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIKICAgICAgIGdyYWRpZW50VHJhbnNmb3JtPSJtYXRyaXgoMC43NTA0LDAsMCwwLjU5MjAwMDAxLDI0LjQwMjEsNTIuNDA1NzMzKSIgLz48bGluZWFyR3JhZGllbnQKICAgICAgIHhsaW5rOmhyZWY9IiNsaW5lYXJHcmFkaWVudDYiCiAgICAgICBpZD0ibGluZWFyR3JhZGllbnQ3IgogICAgICAgeDE9IjgzLjcyMzIyOCIKICAgICAgIHkxPSIxNDQuNTI5MzMiCiAgICAgICB4Mj0iMTA1LjAyMDEyIgogICAgICAgeTI9IjE0NC41MjkzMyIKICAgICAgIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIgogICAgICAgZ3JhZGllbnRUcmFuc2Zvcm09Im1hdHJpeCgxLjA4Mjk0NDIsMCwwLDAuOTYzODgyNTcsLTYuNzY5MjUyOCw1LjIyMDAyODYpIiAvPjxsaW5lYXJHcmFkaWVudAogICAgICAgeGxpbms6aHJlZj0iI2xpbmVhckdyYWRpZW50MjMxIgogICAgICAgaWQ9ImxpbmVhckdyYWRpZW50MjMyIgogICAgICAgeDE9IjEwNy4yNzU4NyIKICAgICAgIHkxPSIxODMuMjQ0MDIiCiAgICAgICB4Mj0iMTA3LjI3NTg3IgogICAgICAgeTI9IjEwNi44OTM5MiIKICAgICAgIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIiAvPjxsaW5lYXJHcmFkaWVudAogICAgICAgeGxpbms6aHJlZj0iI2xpbmVhckdyYWRpZW50MjMxIgogICAgICAgaWQ9ImxpbmVhckdyYWRpZW50MjMzIgogICAgICAgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiCiAgICAgICB4MT0iMTA3LjI3NTg3IgogICAgICAgeTE9IjE4My4yNDQwMiIKICAgICAgIHgyPSIxMDcuMjc1ODciCiAgICAgICB5Mj0iMTA2Ljg5MzkyIgogICAgICAgZ3JhZGllbnRUcmFuc2Zvcm09Im1hdHJpeCgxLjI4NzAxOTEsMCwwLDEuMjg3MDE5MSwtMzAuODg4ODAzLC00MS42Mzc1NTkpIiAvPjxsaW5lYXJHcmFkaWVudAogICAgICAgeGxpbms6aHJlZj0iI2xpbmVhckdyYWRpZW50MjI5IgogICAgICAgaWQ9ImxpbmVhckdyYWRpZW50MjY2IgogICAgICAgeDE9IjcyLjI0MTE4IgogICAgICAgeTE9IjE0NS4wNjg5NyIKICAgICAgIHgyPSIxNDIuOTk3NTEiCiAgICAgICB5Mj0iMTQ1LjA2ODk3IgogICAgICAgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiIC8+PHJhZGlhbEdyYWRpZW50CiAgICAgICB4bGluazpocmVmPSIjbGluZWFyR3JhZGllbnQyNjkiCiAgICAgICBpZD0icmFkaWFsR3JhZGllbnQyNzEiCiAgICAgICBjeD0iMTA3LjYxOTM1IgogICAgICAgY3k9IjE0NS4wNjg5NyIKICAgICAgIGZ4PSIxMDcuNjE5MzUiCiAgICAgICBmeT0iMTQ1LjA2ODk3IgogICAgICAgcj0iMzEuMzU0NTcyIgogICAgICAgZ3JhZGllbnRUcmFuc2Zvcm09Im1hdHJpeCgxLDAsMCwxLjAyMTI3NjYsMCwtMy4wODY1NzE2KSIKICAgICAgIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIiAvPjwvZGVmcz48ZwogICAgIGlkPSJsYXllcjEiCiAgICAgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTE4LjE2ODA1MywtNTguMTIwMTQ0KSI+PHJlY3QKICAgICAgIHN0eWxlPSJvcGFjaXR5OjE7ZmlsbDojMTEyMzM5O2ZpbGwtb3BhY2l0eToxO3N0cm9rZTpub25lO3N0cm9rZS13aWR0aDoxLjc4OTgyO3N0cm9rZS1saW5lY2FwOnNxdWFyZSIKICAgICAgIGlkPSJyZWN0MjY2IgogICAgICAgd2lkdGg9IjEzNS40NjY2NiIKICAgICAgIGhlaWdodD0iMTM1LjQ2NjY2IgogICAgICAgeD0iMTguMTY4MDUzIgogICAgICAgeT0iNTguMTIwMTQ0IgogICAgICAgcnk9IjAiIC8+PGcKICAgICAgIGlkPSJnMjM1IgogICAgICAgc3R5bGU9ImRpc3BsYXk6aW5saW5lIgogICAgICAgdHJhbnNmb3JtPSJtYXRyaXgoMS4xNDQ1MjE4LDAsMCwxLjEyMDY3NzgsLTM3LjI3MTMwNiwtMzYuNzIyMDk1KSI+PGVsbGlwc2UKICAgICAgICAgc3R5bGU9ImRpc3BsYXk6aW5saW5lO29wYWNpdHk6MTtmaWxsOnVybCgjbGluZWFyR3JhZGllbnQyMzMpO2ZpbGwtb3BhY2l0eToxO3N0cm9rZTpub25lO3N0cm9rZS13aWR0aDoxMi44MzI0O3N0cm9rZS1saW5lY2FwOnNxdWFyZSIKICAgICAgICAgaWQ9ImVsbGlwc2UyMzIiCiAgICAgICAgIGN4PSIxMDcuNjE5MzUiCiAgICAgICAgIGN5PSIxNDUuMDY4OTciCiAgICAgICAgIHJ4PSI0OC42ODk5NTMiCiAgICAgICAgIHJ5PSI0OS43MjU5MDMiIC8+PGVsbGlwc2UKICAgICAgICAgc3R5bGU9ImRpc3BsYXk6aW5saW5lO29wYWNpdHk6MTtmaWxsOiMwMDA1MGI7ZmlsbC1vcGFjaXR5OjE7c3Ryb2tlOm5vbmU7c3Ryb2tlLXdpZHRoOjEyLjQ1MjU7c3Ryb2tlLWxpbmVjYXA6c3F1YXJlIgogICAgICAgICBpZD0iZWxsaXBzZTIzMyIKICAgICAgICAgY3g9IjEwNy42MTkzNSIKICAgICAgICAgY3k9IjE0NS4wNjg5NyIKICAgICAgICAgcng9IjQ3LjI0ODU3MyIKICAgICAgICAgcnk9IjQ4LjI1Mzg1NyIgLz48ZWxsaXBzZQogICAgICAgICBzdHlsZT0iZGlzcGxheTppbmxpbmU7b3BhY2l0eToxO2ZpbGw6dXJsKCNsaW5lYXJHcmFkaWVudDIzMik7ZmlsbC1vcGFjaXR5OjE7c3Ryb2tlOm5vbmU7c3Ryb2tlLXdpZHRoOjkuOTcwNjtzdHJva2UtbGluZWNhcDpzcXVhcmUiCiAgICAgICAgIGlkPSJlbGxpcHNlMjMxIgogICAgICAgICBjeD0iMTA3LjYxOTM1IgogICAgICAgICBjeT0iMTQ1LjA2ODk3IgogICAgICAgICByeD0iMzcuODMxNTciCiAgICAgICAgIHJ5PSIzOC42MzY0OTQiIC8+PGVsbGlwc2UKICAgICAgICAgc3R5bGU9ImRpc3BsYXk6aW5saW5lO29wYWNpdHk6MTtmaWxsOiMwMDA1MGI7ZmlsbC1vcGFjaXR5OjE7c3Ryb2tlOm5vbmU7c3Ryb2tlLXdpZHRoOjkuODQxMjg7c3Ryb2tlLWxpbmVjYXA6c3F1YXJlIgogICAgICAgICBpZD0iZWxsaXBzZTIzMCIKICAgICAgICAgY3g9IjEwNy42MTkzNSIKICAgICAgICAgY3k9IjE0NS4wNjg5NyIKICAgICAgICAgcng9IjM3LjM0MDg4OSIKICAgICAgICAgcnk9IjM4LjEzNTM3MiIgLz48ZWxsaXBzZQogICAgICAgICBzdHlsZT0iZGlzcGxheTppbmxpbmU7b3BhY2l0eToxO2ZpbGw6dXJsKCNsaW5lYXJHcmFkaWVudDI2Nik7c3Ryb2tlOm5vbmU7c3Ryb2tlLXdpZHRoOjkuMzI0O3N0cm9rZS1saW5lY2FwOnNxdWFyZSIKICAgICAgICAgaWQ9ImVsbGlwc2UyMjkiCiAgICAgICAgIGN4PSIxMDcuNjE5MzUiCiAgICAgICAgIGN5PSIxNDUuMDY4OTciCiAgICAgICAgIHJ4PSIzNS4zNzgxNjIiCiAgICAgICAgIHJ5PSIzNi4xMzA4ODYiIC8+PGVsbGlwc2UKICAgICAgICAgc3R5bGU9ImRpc3BsYXk6aW5saW5lO29wYWNpdHk6MTtmaWxsOnVybCgjcmFkaWFsR3JhZGllbnQyNzEpO3N0cm9rZTpub25lO3N0cm9rZS13aWR0aDo4LjI2MzU3O3N0cm9rZS1saW5lY2FwOnNxdWFyZSIKICAgICAgICAgaWQ9ImVsbGlwc2UyNjkiCiAgICAgICAgIGN4PSIxMDcuNjE5MzUiCiAgICAgICAgIGN5PSIxNDUuMDY4OTciCiAgICAgICAgIHJ4PSIzMS4zNTQ1NzIiCiAgICAgICAgIHJ5PSIzMi4wMjE2OSIgLz48ZWxsaXBzZQogICAgICAgICBzdHlsZT0iZGlzcGxheTppbmxpbmU7b3BhY2l0eToxO2ZpbGw6IzAwMDUwYjtmaWxsLW9wYWNpdHk6MTtzdHJva2U6bm9uZTtzdHJva2Utd2lkdGg6Ny42Njg3O3N0cm9rZS1saW5lY2FwOnNxdWFyZSIKICAgICAgICAgaWQ9ImVsbGlwc2U3IgogICAgICAgICBjeD0iMTA3LjYxOTM1IgogICAgICAgICBjeT0iMTQ1LjA2ODk3IgogICAgICAgICByeD0iMjkuMDk3NDM1IgogICAgICAgICByeT0iMjkuNzE2NTI4IiAvPjxwYXRoCiAgICAgICAgIGlkPSJlbGxpcHNlNSIKICAgICAgICAgc3R5bGU9ImRpc3BsYXk6aW5saW5lO29wYWNpdHk6MTtmaWxsOnVybCgjbGluZWFyR3JhZGllbnQ3KTtzdHJva2U6bm9uZTtzdHJva2Utd2lkdGg6NC40NjIyNTtzdHJva2UtbGluZWNhcDpzcXVhcmUiCiAgICAgICAgIGQ9Im0gMTAwLjc2NDM3LDEyMy41NzcyNSBhIDE2Ljg2NTkwMSwyMC45NTIxMTQgMCAwIDAgLTE2Ljg2NjAzNiwyMC45NTIwOSAxNi44NjU5MDEsMjAuOTUyMTE0IDAgMCAwIDE2Ljg2NjAzNiwyMC45NTIwOCAxNi44NjU5MDEsMjAuOTUyMTE0IDAgMCAwIDQuNTU5ODUsLTAuNzgwNTIgMjEuMjIzMjI3LDE5Ljk1ODg5OCAwIDAgMSAtMTguMTMxMzYzLC0xOS43NDYxOSAyMS4yMjMyMjcsMTkuOTU4ODk4IDAgMCAxIDE5Ljc2ODgzMywtMTkuOTEyMDUgMTYuODY1OTAxLDIwLjk1MjExNCAwIDAgMCAtNi4xOTczMiwtMS40NjU0MSB6IiAvPjxlbGxpcHNlCiAgICAgICAgIHN0eWxlPSJkaXNwbGF5OmlubGluZTtvcGFjaXR5OjE7ZmlsbDp1cmwoI3JhZGlhbEdyYWRpZW50Myk7c3Ryb2tlOm5vbmU7c3Ryb2tlLXdpZHRoOjUuNDcwMjU7c3Ryb2tlLWxpbmVjYXA6c3F1YXJlIgogICAgICAgICBpZD0icGF0aDIiCiAgICAgICAgIGN4PSIxMDcuNjE5MzUiCiAgICAgICAgIGN5PSIxNDUuMDY4OTciCiAgICAgICAgIHJ4PSIyMC43NTU4NDQiCiAgICAgICAgIHJ5PSIyMS4xOTc0NTYiIC8+PGVsbGlwc2UKICAgICAgICAgc3R5bGU9ImRpc3BsYXk6aW5saW5lO29wYWNpdHk6MTtmaWxsOnVybCgjbGluZWFyR3JhZGllbnQ1KTtzdHJva2U6bm9uZTtzdHJva2Utd2lkdGg6MS45MzQ1ODtzdHJva2UtbGluZWNhcDpzcXVhcmUiCiAgICAgICAgIGlkPSJlbGxpcHNlMyIKICAgICAgICAgY3g9IjEwMy4wNzU1MiIKICAgICAgICAgY3k9IjEzNC41NjgzNiIKICAgICAgICAgcng9IjkuMTQ2MTg0OSIKICAgICAgICAgcnk9IjcuMjYyMDkxNiIgLz48ZWxsaXBzZQogICAgICAgICBzdHlsZT0iZGlzcGxheTppbmxpbmU7b3BhY2l0eToxO2ZpbGw6I2YyZjNmODtmaWxsLW9wYWNpdHk6MTtzdHJva2U6bm9uZTtzdHJva2Utd2lkdGg6MS44MTEyO3N0cm9rZS1saW5lY2FwOnNxdWFyZSIKICAgICAgICAgaWQ9InBhdGgxIgogICAgICAgICBjeD0iMTE4LjAyMTgxIgogICAgICAgICBjeT0iMTM0LjU2ODM3IgogICAgICAgICByeD0iNy42MDU1Njg5IgogICAgICAgICByeT0iNy42NTQ2MzY5IiAvPjwvZz48L2c+PC9zdmc+Cg==">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.1/dist/cdn.min.js" defer></script>
+    
+    <style>/* Custom CSS for glassmorphism effects, mirror transform, and scrollbar styling */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  background: radial-gradient(circle at 20% 30%, #0a0c12, #030507);
+  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  min-height: 100vh;
+}
+/* Semi-transparent panels with backdrop blur (glass effect) */
+.glass-panel {
+  background: rgba(15, 20, 28, 0.65);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(56, 189, 248, 0.2);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+.glass-card {
+  background: rgba(12, 16, 24, 0.75);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(34, 211, 238, 0.2);
+  border-radius: 1.5rem;
+  transition: all 0.2s ease;
+}
+.glass-card:hover {
+  border-color: rgba(34, 211, 238, 0.5);
+  box-shadow: 0 10px 28px -8px rgba(0, 255, 255, 0.15);
+}
+/* Gradient button style */
+.btn-primary {
+  background: linear-gradient(105deg, #0b6e8f 0%, #0891b2 100%);
+  transition: all 0.2s;
+  box-shadow: 0 2px 8px rgba(6, 182, 212, 0.3);
+}
+.btn-primary:hover { transform: translateY(-1px); filter: brightness(1.05); }
+/* Mirror effect: flips video horizontally via CSS transform */
+.mirror-active { transform: scaleX(-1); }
+.video-container {
+  background: #000;
+  border-radius: 1.2rem;
+  overflow: hidden;
+  box-shadow: 0 20px 35px -12px black;
+}
+/* Custom scrollbar for gallery */
+.gallery-scroll::-webkit-scrollbar { height: 5px; }
+.gallery-scroll::-webkit-scrollbar-track { background: #1e293b; border-radius: 10px; }
+.gallery-scroll::-webkit-scrollbar-thumb { background: #0891b2; border-radius: 10px; }
+/* Alpine.js initial hide (prevents flash of unstyled content) */
+[x-cloak] { display: none !important; }
+/* Subtle press effect for interactive elements */
+button:active { transform: scale(0.97); transition: transform 0.05s; }</style>
+  </head>
+  <body>
+<!-- 
+  MAIN APPLICATION UI 
+  No modals, no onboarding — immediate camera access after permission.
+  The interface is split into two columns on desktop, stacked on mobile.
+-->
+<div class="max-w-[1600px] mx-auto px-4 md:px-6 py-4 min-h-screen flex flex-col text-gray-200 antialiased" x-data="camdeskApp()" x-init="initApp()" x-cloak>
+  <!-- Top Navigation Bar: only essential links (Donate, Source, Share) -->
+  <nav class="flex items-center justify-between mb-6 glass-panel rounded-2xl px-5 py-2.5 backdrop-blur-lg">
+    <div class="flex items-center gap-2">
+      <svg class="w-8 h-8" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 135.46666 135.46667">
+        <defs id="defs1">
+          <linearGradient id="linearGradient269">
+            <stop style="stop-color:#93f0f8;stop-opacity:1;" offset="0.04081633" id="stop271" />
+            <stop style="stop-color:#112339;stop-opacity:1;" offset="0.51913267" id="stop269" />
+            <stop style="stop-color:#93f0f8;stop-opacity:1;" offset="1" id="stop270" />
+          </linearGradient>
+          <linearGradient id="linearGradient231">
+            <stop style="stop-color:#a7d0ff;stop-opacity:0;" offset="0" id="stop232" />
+            <stop style="stop-color:#00050b;stop-opacity:1;" offset="1" id="stop231" />
+          </linearGradient>
+          <linearGradient id="linearGradient229">
+            <stop style="stop-color:#00050b;stop-opacity:1;" offset="0" id="stop229" />
+            <stop style="stop-color:#5ea7ff;stop-opacity:0.15000001;" offset="1" id="stop230" />
+          </linearGradient>
+          <linearGradient id="linearGradient6">
+            <stop style="stop-color:#ffffff;stop-opacity:0.32237872;" offset="0" id="stop6" />
+            <stop style="stop-color:#ffffff;stop-opacity:0;" offset="1" id="stop7" />
+          </linearGradient>
+          <linearGradient id="linearGradient3">
+            <stop style="stop-color:#f2f3f8;stop-opacity:0.37402192;" offset="0" id="stop4" />
+            <stop style="stop-color:#f2f3f8;stop-opacity:0;" offset="1" id="stop5" />
+          </linearGradient>
+          <linearGradient id="linearGradient2">
+            <stop style="stop-color:#fa7a39;stop-opacity:1;" offset="0" id="stop3" />
+            <stop style="stop-color:#80170f;stop-opacity:1;" offset="1" id="stop2" />
+          </linearGradient>
+          <radialGradient xlink:href="#linearGradient2" id="radialGradient3" cx="93.711334" cy="138.63626" fx="93.711334" fy="138.63626" r="20.657707" gradientTransform="matrix(0.87219204,1.5073455,-1.45817,0.8437376,214.30123,-128.56644)" gradientUnits="userSpaceOnUse" />
+          <linearGradient xlink:href="#linearGradient3" id="linearGradient5" x1="94.484467" y1="128.84198" x2="107.22198" y2="142.4352" gradientUnits="userSpaceOnUse" gradientTransform="matrix(0.7504,0,0,0.59200001,24.4021,52.405733)" />
+          <linearGradient xlink:href="#linearGradient6" id="linearGradient7" x1="83.723228" y1="144.52933" x2="105.02012" y2="144.52933" gradientUnits="userSpaceOnUse" gradientTransform="matrix(1.0829442,0,0,0.96388257,-6.7692528,5.2200286)" />
+          <linearGradient xlink:href="#linearGradient231" id="linearGradient232" x1="107.27587" y1="183.24402" x2="107.27587" y2="106.89392" gradientUnits="userSpaceOnUse" />
+          <linearGradient xlink:href="#linearGradient231" id="linearGradient233" gradientUnits="userSpaceOnUse" x1="107.27587" y1="183.24402" x2="107.27587" y2="106.89392" gradientTransform="matrix(1.2870191,0,0,1.2870191,-30.888803,-41.637559)" />
+          <linearGradient xlink:href="#linearGradient229" id="linearGradient266" x1="72.24118" y1="145.06897" x2="142.99751" y2="145.06897" gradientUnits="userSpaceOnUse" />
+          <radialGradient xlink:href="#linearGradient269" id="radialGradient271" cx="107.61935" cy="145.06897" fx="107.61935" fy="145.06897" r="31.354572" gradientTransform="matrix(1,0,0,1.0212766,0,-3.0865716)" gradientUnits="userSpaceOnUse" />
+        </defs>
+        <g id="layer1" transform="translate(-18.168053,-58.120144)">
+          <g id="g235" style="display:inline" transform="matrix(1.1445218,0,0,1.1206778,-37.271306,-36.722095)">
+            <ellipse style="display:inline;opacity:1;fill:url(#linearGradient233);fill-opacity:1;stroke:none;stroke-width:12.8324;stroke-linecap:square" id="ellipse232" cx="107.61935" cy="145.06897" rx="48.689953" ry="49.725903" />
+            <ellipse style="display:inline;opacity:1;fill:#00050b;fill-opacity:1;stroke:none;stroke-width:12.4525;stroke-linecap:square" id="ellipse233" cx="107.61935" cy="145.06897" rx="47.248573" ry="48.253857" />
+            <ellipse style="display:inline;opacity:1;fill:url(#linearGradient232);fill-opacity:1;stroke:none;stroke-width:9.9706;stroke-linecap:square" id="ellipse231" cx="107.61935" cy="145.06897" rx="37.83157" ry="38.636494" />
+            <ellipse style="display:inline;opacity:1;fill:#00050b;fill-opacity:1;stroke:none;stroke-width:9.84128;stroke-linecap:square" id="ellipse230" cx="107.61935" cy="145.06897" rx="37.340889" ry="38.135372" />
+            <ellipse style="display:inline;opacity:1;fill:url(#linearGradient266);stroke:none;stroke-width:9.324;stroke-linecap:square" id="ellipse229" cx="107.61935" cy="145.06897" rx="35.378162" ry="36.130886" />
+            <ellipse style="display:inline;opacity:1;fill:url(#radialGradient271);stroke:none;stroke-width:8.26357;stroke-linecap:square" id="ellipse269" cx="107.61935" cy="145.06897" rx="31.354572" ry="32.02169" />
+            <ellipse style="display:inline;opacity:1;fill:#00050b;fill-opacity:1;stroke:none;stroke-width:7.6687;stroke-linecap:square" id="ellipse7" cx="107.61935" cy="145.06897" rx="29.097435" ry="29.716528" />
+            <path id="ellipse5" style="display:inline;opacity:1;fill:url(#linearGradient7);stroke:none;stroke-width:4.46225;stroke-linecap:square" d="m 100.76437,123.57725 a 16.865901,20.952114 0 0 0 -16.866036,20.95209 16.865901,20.952114 0 0 0 16.866036,20.95208 16.865901,20.952114 0 0 0 4.55985,-0.78052 21.223227,19.958898 0 0 1 -18.131363,-19.74619 21.223227,19.958898 0 0 1 19.768833,-19.91205 16.865901,20.952114 0 0 0 -6.19732,-1.46541 z" />
+            <ellipse style="display:inline;opacity:1;fill:url(#radialGradient3);stroke:none;stroke-width:5.47025;stroke-linecap:square" id="path2" cx="107.61935" cy="145.06897" rx="20.755844" ry="21.197456" />
+            <ellipse style="display:inline;opacity:1;fill:url(#linearGradient5);stroke:none;stroke-width:1.93458;stroke-linecap:square" id="ellipse3" cx="103.07552" cy="134.56836" rx="9.1461849" ry="7.2620916" />
+            <ellipse style="display:inline;opacity:1;fill:#f2f3f8;fill-opacity:1;stroke:none;stroke-width:1.8112;stroke-linecap:square" id="path1" cx="118.02181" cy="134.56837" rx="7.6055689" ry="7.6546369" />
+          </g>
+        </g>
+      </svg>
+      <span class="font-bold text-xl tracking-tight bg-gradient-to-r from-white to-cyan-300 bg-clip-text text-transparent">CamDesk</span>
+      <span class="text-[11px] font-mono bg-white/10 px-2 py-0.5 rounded-full text-cyan-300 ml-2">Webcam Studio PWA</span>
+    </div>
+    <div class="flex items-center gap-3">
+      <!-- Donate link: supports the original author -->
+      <a href="https://michaelsboost.com/donate" target="_blank" class="text-sm bg-amber-500/20 hover:bg-amber-500/30 px-3 py-1.5 rounded-full transition flex items-center gap-1"><i class="fas fa-heart text-amber-400"></i><span class="hidden sm:inline">Donate</span></a>
+      <!-- Source code link: GitHub repository -->
+      <a href="https://github.com/michaelsboost/CamDesk" target="_blank" class="text-sm bg-slate-700 hover:bg-slate-600 px-3 py-1.5 rounded-full transition flex items-center gap-1"><i class="fab fa-github"></i><span class="hidden sm:inline">Source</span></a>
+      <!-- Share button: uses Web Share API to share the app URL -->
+      <button @click="shareApp()" class="text-sm bg-cyan-500/20 hover:bg-cyan-500/30 px-3 py-1.5 rounded-full transition flex items-center gap-1"><i class="fas fa-share-alt"></i><span class="hidden sm:inline">Share</span></button>
+    </div>
+  </nav>
+
+  <!-- Main 2-Column Workspace: Camera preview (left) + Controls/Gallery (right) -->
+  <div class="flex flex-col lg:flex-row gap-6 flex-1">
+    <!-- LEFT COLUMN: Camera Preview Panel -->
+    <div class="flex-1 lg:flex-[1.3] glass-card p-5 rounded-2xl flex flex-col">
+      <div class="flex justify-between items-center mb-3 flex-wrap gap-2">
+        <h3 class="font-semibold text-lg flex items-center gap-2"><span class="text-cyan-400">🎥</span> Live Feed</h3>
+        <div class="flex gap-2">
+          <!-- Toggle camera on/off -->
+          <button @click="toggleCameraPower()" class="text-xs bg-white/10 px-3 py-1 rounded-full hover:bg-white/20 transition" x-text="cameraEnabled ? 'Turn off' : 'Turn on'"></button>
+          <!-- Switch to next available camera -->
+          <button @click="switchCamera()" class="text-xs bg-white/10 px-3 py-1 rounded-full hover:bg-white/20 transition"><i class="fas fa-sync-alt mr-1"></i>Switch</button>
+        </div>
+      </div>
+      <div class="video-container relative bg-black/40 rounded-xl overflow-hidden aspect-video">
+        <!-- Video element: receives the camera stream -->
+        <video id="cameraPreview" x-ref="videoElem" autoplay playsinline muted class="w-full h-full object-cover transition duration-200" :class="{'mirror-active': mirrorEnabled}"></video>
+        <!-- Overlay: recording indicator and microphone status -->
+        <div class="absolute bottom-3 left-3 flex gap-2 text-xs bg-black/50 backdrop-blur-sm px-2 py-1 rounded-full">
+          <template x-if="isRecording"><span class="text-red-400 animate-pulse"><i class="fas fa-circle"></i> REC</span></template>
+          <template x-if="micEnabled && !isRecording"><span class="text-green-300"><i class="fas fa-microphone"></i> mic on</span></template>
+        </div>
+        <div class="absolute top-3 right-3 bg-black/50 rounded-full px-2 py-1 text-xs"><span x-text="cameraLabel || 'Camera'"></span></div>
+      </div>
+      <!-- Quick controls row: Mirror, Fullscreen, PiP, Resolution, Microphone -->
+      <div class="mt-4 flex flex-wrap justify-between items-center gap-2">
+        <div class="flex gap-2">
+          <button @click="toggleMirror" class="bg-slate-800/70 hover:bg-slate-700 p-2 rounded-xl transition" :class="{'bg-blue-600/40': mirrorEnabled}" title="Mirror"><i class="fas fa-arrows-alt-h"></i></button>
+          <button @click="toggleFullscreen()" class="bg-slate-800/70 hover:bg-slate-700 p-2 rounded-xl"><i class="fas fa-expand"></i></button>
+          <button @click="enterPiP()" x-show="pipSupported" class="bg-slate-800/70 hover:bg-slate-700 p-2 rounded-xl"><i class="fas fa-video"></i> PiP</button>
+        </div>
+        <div class="flex gap-2 items-center">
+          <select x-model="selectedResolution" @change="changeResolution()" class="bg-slate-800 border border-slate-600 rounded-lg text-sm px-2 py-1.5">
+            <option value="auto">Auto</option><option value="720p">720p</option><option value="1080p">1080p</option>
+          </select>
+          <label class="flex items-center gap-1 text-xs"><i class="fas fa-microphone-alt"></i><input type="checkbox" x-model="micEnabled" @change="toggleMicrophone()" class="ml-1"></label>
+        </div>
+      </div>
+      <!-- Camera device selector: populated from enumerateDevices() -->
+      <div class="mt-3 flex flex-wrap items-center gap-2 text-sm">
+        <span class="text-slate-300"><i class="fas fa-camera"></i> Device:</span>
+        <select x-model="selectedDeviceId" @change="selectCameraDevice()" class="bg-slate-800 border border-slate-600 rounded-lg px-2 py-1.5 text-xs flex-1">
+          <option value="">-- Select webcam --</option>
+          <template x-for="device in videoDevices" :key="device.deviceId"><option :value="device.deviceId" x-text="device.label || `Camera ${device.deviceId.slice(0,5)}`"></option></template>
+        </select>
+      </div>
+    </div>
+
+    <!-- RIGHT COLUMN: Control Panel & Gallery -->
+    <div class="flex-1 lg:flex-[1] glass-card p-5 rounded-2xl flex flex-col">
+      <div class="flex items-center justify-between border-b border-cyan-500/20 pb-2 mb-4">
+        <h3 class="font-semibold text-lg flex gap-2"><span class="text-cyan-400">🧩</span> Studio Controls</h3>
+        <span class="text-[11px] bg-cyan-500/20 rounded-full px-2 py-0.5">v2.0 · full feature</span>
+      </div>
+      
+      <!-- Primary action buttons: Photo, Record, Share last, Snap now -->
+      <div class="grid grid-cols-2 gap-3 mb-5">
+        <button @click="takePhoto()" class="bg-gradient-to-br from-blue-600 to-indigo-700 hover:from-blue-500 hover:to-indigo-600 text-white font-semibold py-2.5 rounded-xl shadow-lg transition flex items-center justify-center gap-2"><i class="fas fa-camera"></i> Photo</button>
+        <template x-if="!isRecording">
+          <button @click="startRecording()" :disabled="!mediaRecorderSupported" class="bg-red-600/80 hover:bg-red-700 disabled:opacity-50 font-semibold py-2.5 rounded-xl flex items-center justify-center gap-2"><i class="fas fa-circle"></i> Record</button>
+        </template>
+        <template x-if="isRecording">
+          <button @click="stopRecording()" class="bg-amber-600 hover:bg-amber-700 font-semibold py-2.5 rounded-xl flex items-center justify-center gap-2"><i class="fas fa-stop"></i> Stop</button>
+        </template>
+        <button @click="shareLastCapture()" :disabled="!lastCaptureBlob || !webShareSupported" class="bg-emerald-600/70 hover:bg-emerald-600 disabled:opacity-40 py-2.5 rounded-xl flex items-center justify-center gap-2"><i class="fas fa-share-alt"></i> Share last</button>
+        <button @click="downloadCurrentPreview()" class="bg-slate-700 hover:bg-slate-600 py-2.5 rounded-xl flex items-center justify-center gap-2"><i class="fas fa-download"></i> Snap now</button>
+      </div>
+      
+      <!-- Activity Log: provides user feedback for actions -->
+      <div class="bg-black/30 rounded-xl p-3 mb-4">
+        <div class="flex justify-between text-xs text-cyan-300 mb-1"><span>📋 Activity</span><span @click="clearActivityLog" class="cursor-pointer hover:text-white"><i class="fas fa-trash-alt text-[10px]"></i> clear</span></div>
+        <ul class="text-gray-300 text-xs space-y-1 max-h-28 overflow-y-auto">
+          <template x-for="log in activityLog.slice(0, 5)" :key="log.id">
+            <li class="border-l-2 border-cyan-500/50 pl-2 py-1" x-text="log.text"></li>
+          </template>
+          <template x-if="activityLog.length === 0">
+            <li class="text-gray-500 italic">— ready —</li>
+          </template>
+        </ul>
+      </div>
+
+      <!-- Session Gallery: displays captured photos/videos with hover actions -->
+      <div>
+        <div class="flex justify-between items-center mb-2">
+          <h4 class="font-semibold text-sm"><i class="fas fa-images mr-2 text-blue-400"></i>Session gallery</h4>
+          <button @click="clearGallery" class="text-xs text-red-300 hover:text-red-200"><i class="fas fa-trash-alt"></i> clear all</button>
+        </div>
+        <div class="gallery-scroll overflow-x-auto pb-2 flex gap-3">
+          <template x-for="(item, idx) in galleryItems" :key="idx">
+            <div class="relative flex-shrink-0 w-20 h-20 bg-slate-800 rounded-xl overflow-hidden border border-slate-600 group">
+              <img x-if="item.type === 'photo'" :src="item.url" class="w-full h-full object-cover">
+              <video x-if="item.type === 'video'" :src="item.url" class="w-full h-full object-cover" muted></video>
+              <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition flex items-center justify-center gap-2 text-xs">
+                <button @click="downloadItem(item)" class="text-white p-1"><i class="fas fa-download"></i></button>
+                <button @click="shareItem(item)" x-show="webShareSupported" class="text-white p-1"><i class="fas fa-share"></i></button>
+                <button @click="deleteItem(idx)" class="text-white p-1"><i class="fas fa-trash"></i></button>
+              </div>
+            </div>
+          </template>
+          <div x-show="galleryItems.length === 0" class="text-slate-400 text-xs flex items-center justify-center w-full py-2">No captures yet</div>
+        </div>
+      </div>
+
+      <!-- Footer: privacy note, legacy version link, press mentions -->
+      <div class="mt-5 pt-3 border-t border-white/10 text-xs text-slate-400 flex justify-between flex-wrap gap-2">
+        <span><i class="fas fa-shield-alt"></i> Privacy-first: media stays local</span>
+        <span>⭐ featured by <a href="https://www.omgubuntu.co.uk/2012/10/camdesk-for-linux-adds-webcam-window-to-the-desktop" target="_blank" class="text-cyan-400 hover:underline">OMG! Ubuntu</a>, <a href="https://www.makeuseof.com/tag/add-a-customizable-webcam-widget-to-your-desktop-with-the-simple-lightweight-camdesk-windows-linux/" target="_blank" class="text-cyan-400 hover:underline">MakeUseOf</a>, and <a href="https://www.igrsm.org/igrsm2022/submissionstemplates.html" target="_blank" class="text-cyan-400 hover:underline">IGRSM Conference</a></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Status Bar: shows current time and offline/PWA status -->
+  <div class="mt-6 glass-panel rounded-2xl p-3 flex flex-wrap justify-between items-center text-[12px] text-gray-400">
+    <div>CamDesk · webcam studio | <span x-text="new Date().toLocaleTimeString()"></span></div>
+    <div class="flex gap-4">
+      <span>🔒 offline cache: active</span>
+      <span><i class="fas fa-sync-alt" x-show="cameraEnabled"></i> live stream</span>
+    </div>
+  </div>
+</div>
+
+    <script src="https://michaelsboost.com/TailwindCSSMod/tailwind-mod.min.js"></script>
+    <script>
+/**
+ * CamDesk Main Application - Alpine.js Component
+ * ===============================================
+ * This object contains all reactive state and methods for the app.
+ * It handles:
+ * - Camera initialization via getUserMedia
+ * - Device enumeration and selection
+ * - Photo capture (Canvas API)
+ * - Video recording (MediaRecorder API)
+ * - Picture-in-Picture (PiP)
+ * - Fullscreen toggle
+ * - Mirror effect
+ * - Resolution constraints
+ * - Microphone toggle (audio track)
+ * - Web Share API integration (sharing captures and the app itself)
+ * - Gallery management (in-memory blobs with revokable URLs)
+ * - Activity logging
+ * - PWA service worker registration & manifest injection
+ */
+function camdeskApp() {
+  return {
+    // ========== MEDIA STATE ==========
+    stream: null, // Current MediaStream from getUserMedia
+    videoElem: null, // Reference to the <video> element
+    videoDevices: [], // List of available video input devices
+    selectedDeviceId: "", // Currently selected device ID
+    cameraLabel: "Camera", // Display name of active camera
+    cameraEnabled: false, // Whether stream is active
+    mirrorEnabled: false, // Mirror video horizontally (CSS transform)
+    micEnabled: false, // Microphone enabled for recording
+    selectedResolution: "auto", // 'auto', '720p', or '1080p'
+    // ========== FEATURE DETECTION FLAGS ==========
+    webShareSupported: false, // navigator.share available?
+    pipSupported: false, // Picture-in-Picture API available?
+    mediaRecorderSupported: true, // MediaRecorder API available?
+    // ========== RECORDING STATE ==========
+    isRecording: false,
+    mediaRecorder: null,
+    recordedChunks: [],
+    // ========== GALLERY ==========
+    lastCaptureBlob: null, // Most recent capture (for quick share)
+    galleryItems: [], // Array of { type, blob, url }
+    activityLog: [], // User action log { id, text }
+    /**
+     * INITIALIZATION
+     * Called automatically when Alpine component is mounted.
+     * Sets up feature detection, camera enumeration, and PWA service worker.
+     */
+    async initApp() {
+      this.videoElem = document.getElementById('cameraPreview');
+      // Feature detection for modern browser APIs
+      this.webShareSupported = !!navigator.share;
+      this.pipSupported = !!document.pictureInPictureEnabled;
+      this.mediaRecorderSupported = !!window.MediaRecorder;
+      // Start camera (requests permission automatically)
+      await this.enumerateDevices();
+      await this.startCamera();
+      // PWA: Register service worker for offline caching
+      // Service worker caches the root and index.html for offline access.
+      if ('serviceWorker' in navigator) {
+        // Inline service worker script as a Blob (works in modern browsers)
+        const swCode = `
+          self.addEventListener('install', e => {
+            e.waitUntil(caches.open('camdesk-v2').then(cache => cache.addAll(['/', '/index.html'])));
+          });
+          self.addEventListener('fetch', e => {
+            e.respondWith(caches.match(e.request).then(r => r || fetch(e.request).catch(() => caches.match('/index.html'))));
+          });
+        `;
+        const blob = new Blob([swCode], {
+          type: 'application/javascript'
+        });
+        navigator.serviceWorker.register(URL.createObjectURL(blob)).catch(e => console.warn("SW registration failed", e));
+      }
+      // Update live clock every second
+      setInterval(() => this.$nextTick(() => {}), 1000);
+      this.addActivityLog('🚀 CamDesk ready');
+    },
+    /**
+     * LOGGING
+     * Adds a timestamped message to the activity log.
+     * @param {string} text - Message to display
+     */
+    addActivityLog(text) {
+      this.activityLog.unshift({
+        id: Date.now(),
+        text: text + ' at ' + new Date().toLocaleTimeString()
+      });
+      if (this.activityLog.length > 12) this.activityLog.pop();
+    },
+    clearActivityLog() {
+      this.activityLog = [];
+      this.addActivityLog('Log cleared');
+    },
+    /**
+     * SHARE APP (via Web Share API)
+     * Shares the CamDesk GitHub repository URL.
+     */
+    async shareApp() {
+      if (!this.webShareSupported) {
+        alert("Web Share not supported on this browser. You can copy the link: https://github.com/michaelsboost/CamDesk");
+        return;
+      }
+      try {
+        await navigator.share({
+          title: 'CamDesk',
+          text: 'Free privacy-first webcam studio - take photos, record videos, PiP, and more!',
+          url: 'https://github.com/michaelsboost/CamDesk'
+        });
+        this.addActivityLog(`📤 Shared CamDesk app`);
+      } catch (e) {
+        console.warn(e);
+      }
+    },
+    // ========== CAMERA MANAGEMENT ==========
+    /**
+     * Enumerates all video input devices and populates the device dropdown.
+     * Uses navigator.mediaDevices.enumerateDevices()
+     */
+    async enumerateDevices() {
+      if (!navigator.mediaDevices) return;
+      const devices = await navigator.mediaDevices.enumerateDevices();
+      this.videoDevices = devices.filter(d => d.kind === 'videoinput');
+      if (this.videoDevices.length && !this.selectedDeviceId)
+        this.selectedDeviceId = this.videoDevices[0].deviceId;
+    },
+    /**
+     * Starts the camera stream with current deviceId and resolution.
+     * Applies video constraints and optionally enables audio track.
+     * @param {string} deviceId - Optional device ID to use
+     * @param {string} resolution - 'auto', '720p', or '1080p'
+     */
+    async startCamera(deviceId = this.selectedDeviceId, resolution = this.selectedResolution) {
+      if (this.stream) this.stopTracks();
+      let videoConstraints = {
+        deviceId: deviceId ? {
+          exact: deviceId
+        } : undefined
+      };
+      // Set width/height constraints based on resolution
+      if (resolution === '720p') {
+        videoConstraints.width = {
+          ideal: 1280
+        };
+        videoConstraints.height = {
+          ideal: 720
+        };
+      } else if (resolution === '1080p') {
+        videoConstraints.width = {
+          ideal: 1920
+        };
+        videoConstraints.height = {
+          ideal: 1080
+        };
+      } else {
+        videoConstraints.width = {
+          ideal: 1920
+        };
+        videoConstraints.height = {
+          ideal: 1080
+        };
+      }
+      const constraints = {
+        video: videoConstraints,
+        audio: this.micEnabled
+      };
+      try {
+        const newStream = await navigator.mediaDevices.getUserMedia(constraints);
+        this.stream = newStream;
+        this.videoElem.srcObject = newStream;
+        this.cameraEnabled = true;
+        const track = newStream.getVideoTracks()[0];
+        if (track) this.cameraLabel = track.label || "Webcam";
+        await this.enumerateDevices(); // Refresh device labels after permission
+        this.addActivityLog(`📷 Camera ready: ${this.cameraLabel}`);
+      } catch (err) {
+        this.cameraEnabled = false;
+        this.addActivityLog(`⚠️ Camera error: ${err.message || 'permission denied'}`);
+        alert("Camera access failed: " + (err.message || "Check permissions and reload."));
+      }
+    },
+    /**
+     * Stops all tracks of the current MediaStream.
+     */
+    stopTracks() {
+      if (this.stream) {
+        this.stream.getTracks().forEach(t => t.stop());
+        this.stream = null;
+      }
+      this.cameraEnabled = false;
+    },
+    /**
+     * Toggles camera power (on/off).
+     */
+    toggleCameraPower() {
+      if (this.cameraEnabled) {
+        this.stopTracks();
+        this.addActivityLog('Camera off');
+      } else {
+        this.startCamera();
+      }
+    },
+    /**
+     * Called when user selects a different camera from dropdown.
+     */
+    async selectCameraDevice() {
+      if (this.selectedDeviceId) await this.startCamera(this.selectedDeviceId, this.selectedResolution);
+    },
+    /**
+     * Called when resolution dropdown changes.
+     */
+    async changeResolution() {
+      await this.startCamera(this.selectedDeviceId, this.selectedResolution);
+    },
+    /**
+     * Called when microphone checkbox toggles.
+     * Restarts stream to add/remove audio track.
+     */
+    async toggleMicrophone() {
+      await this.startCamera(this.selectedDeviceId, this.selectedResolution);
+    },
+    /**
+     * Cycles to the next available camera device.
+     */
+    async switchCamera() {
+      if (this.videoDevices.length < 2) {
+        alert("Only one camera detected");
+        return;
+      }
+      const currentIdx = this.videoDevices.findIndex(d => d.deviceId === this.selectedDeviceId);
+      const nextIdx = (currentIdx + 1) % this.videoDevices.length;
+      this.selectedDeviceId = this.videoDevices[nextIdx].deviceId;
+      await this.startCamera(this.selectedDeviceId, this.selectedResolution);
+    },
+    /**
+     * Toggles mirror effect (CSS transform).
+     */
+    toggleMirror() {
+      this.mirrorEnabled = !this.mirrorEnabled;
+    },
+    // ========== PHOTO CAPTURE ==========
+    /**
+     * Captures a photo from the current video frame using Canvas API.
+     * Saves as JPEG blob and adds to gallery.
+     */
+    async takePhoto() {
+      if (!this.videoElem || !this.videoElem.videoWidth) {
+        alert("Camera not ready");
+        return;
+      }
+      const canvas = document.createElement('canvas');
+      canvas.width = this.videoElem.videoWidth;
+      canvas.height = this.videoElem.videoHeight;
+      const ctx = canvas.getContext('2d');
+      // Apply mirror transformation if enabled
+      if (this.mirrorEnabled) {
+        ctx.translate(canvas.width, 0);
+        ctx.scale(-1, 1);
+      }
+      ctx.drawImage(this.videoElem, 0, 0, canvas.width, canvas.height);
+      const blob = await new Promise(res => canvas.toBlob(res, 'image/jpeg', 0.92));
+      const url = URL.createObjectURL(blob);
+      this.galleryItems.unshift({
+        type: 'photo',
+        blob: blob,
+        url: url
+      });
+      this.lastCaptureBlob = blob;
+      this.addActivityLog(`📸 Photo captured`);
+      this.trimGallery();
+    },
+    // ========== VIDEO RECORDING ==========
+    /**
+     * Starts video recording using MediaRecorder API.
+     * Records both video and audio (if mic enabled).
+     */
+    startRecording() {
+      if (!this.stream || !this.mediaRecorderSupported) return;
+      this.recordedChunks = [];
+      const mime = MediaRecorder.isTypeSupported('video/webm') ? 'video/webm' : '';
+      this.mediaRecorder = new MediaRecorder(this.stream, {
+        mimeType: mime
+      });
+      this.mediaRecorder.ondataavailable = (e) => {
+        if (e.data.size) this.recordedChunks.push(e.data);
+      };
+      this.mediaRecorder.onstop = async () => {
+        const blob = new Blob(this.recordedChunks, {
+          type: mime || 'video/webm'
+        });
+        const url = URL.createObjectURL(blob);
+        this.galleryItems.unshift({
+          type: 'video',
+          blob: blob,
+          url: url
+        });
+        this.lastCaptureBlob = blob;
+        this.addActivityLog(`🎥 Recording saved (${(blob.size/1024).toFixed(1)} KB)`);
+        this.isRecording = false;
+        this.trimGallery();
+      };
+      this.mediaRecorder.start(1000); // Collect data every second
+      this.isRecording = true;
+      this.addActivityLog(`🔴 Recording started`);
+    },
+    /**
+     * Stops the ongoing recording.
+     */
+    stopRecording() {
+      if (this.mediaRecorder && this.isRecording) this.mediaRecorder.stop();
+    },
+    // ========== DOWNLOAD & SHARE ==========
+    /**
+     * Downloads a gallery item (photo or video).
+     * @param {object} item - Gallery item with blob and type
+     */
+    downloadItem(item) {
+      const a = document.createElement('a');
+      a.href = item.url;
+      a.download = `camdesk_${item.type}_${Date.now()}.${item.type === 'photo' ? 'jpg' : 'webm'}`;
+      a.click();
+      this.addActivityLog(`⬇️ Downloaded ${item.type}`);
+    },
+    /**
+     * Shares a gallery item using Web Share API.
+     * @param {object} item - Gallery item with blob and type
+     */
+    async shareItem(item) {
+      if (!this.webShareSupported) {
+        alert("Web Share not supported");
+        return;
+      }
+      const file = new File([item.blob], `capture.${item.type === 'photo' ? 'jpg' : 'webm'}`, {
+        type: item.type === 'photo' ? 'image/jpeg' : 'video/webm'
+      });
+      if (navigator.canShare && navigator.canShare({
+          files: [file]
+        })) {
+        await navigator.share({
+          files: [file],
+          title: 'CamDesk capture'
+        });
+        this.addActivityLog(`📤 Shared ${item.type}`);
+      } else alert("Sharing not possible for this file");
+    },
+    /**
+     * Shares the most recent capture (lastCaptureBlob).
+     */
+    async shareLastCapture() {
+      if (this.lastCaptureBlob && this.webShareSupported) {
+        const file = new File([this.lastCaptureBlob], "snapshot.jpg", {
+          type: 'image/jpeg'
+        });
+        if (navigator.canShare && navigator.canShare({
+            files: [file]
+          })) {
+          await navigator.share({
+            files: [file],
+            title: 'CamDesk Snapshot'
+          });
+          this.addActivityLog(`📤 Shared last capture`);
+        } else alert("Sharing unavailable");
+      } else alert("No recent capture or share not supported");
+    },
+    /**
+     * Takes a photo from current preview and downloads it immediately.
+     */
+    downloadCurrentPreview() {
+      if (this.videoElem && this.videoElem.videoWidth) this.takePhoto();
+      else alert("No active preview");
+    },
+    // ========== PICTURE-IN-PICTURE ==========
+    /**
+     * Enters or exits Picture-in-Picture mode on the video element.
+     * Feature detection used to hide button if unsupported.
+     */
+    async enterPiP() {
+      if (!this.pipSupported) {
+        alert("Picture-in-Picture not supported");
+        return;
+      }
+      try {
+        if (document.pictureInPictureElement) await document.exitPictureInPicture();
+        else await this.videoElem.requestPictureInPicture();
+        this.addActivityLog(`🖼️ PiP toggled`);
+      } catch (e) {
+        console.warn(e);
+      }
+    },
+    // ========== FULLSCREEN ==========
+    /**
+     * Toggles fullscreen mode on the entire document.
+     */
+    toggleFullscreen() {
+      if (!document.fullscreenElement) document.documentElement.requestFullscreen().catch(e => alert());
+      else document.exitFullscreen();
+    },
+    // ========== GALLERY MANAGEMENT ==========
+    /**
+     * Deletes a single gallery item and revokes its object URL.
+     * @param {number} idx - Index of item in galleryItems array
+     */
+    deleteItem(idx) {
+      const item = this.galleryItems[idx];
+      if (item.url) URL.revokeObjectURL(item.url);
+      this.galleryItems.splice(idx, 1);
+      this.addActivityLog(`🗑️ Deleted from gallery`);
+    },
+    /**
+     * Clears the entire gallery and revokes all URLs.
+     */
+    clearGallery() {
+      this.galleryItems.forEach(i => URL.revokeObjectURL(i.url));
+      this.galleryItems = [];
+      this.lastCaptureBlob = null;
+      this.addActivityLog(`🧹 Gallery cleared`);
+    },
+    /**
+     * Keeps only the 20 most recent items to prevent memory bloat.
+     */
+    trimGallery() {
+      if (this.galleryItems.length > 20) this.galleryItems.pop();
+    }
+  };
+}
+</script>
+  </body>
+</html>
